@@ -1,0 +1,4 @@
+baseURL = 'https://docs.asciinema.org/'
+languageCode = 'en-us'
+title = 'asciinema docs'
+theme = 'ananke'
