@@ -1,1 +1,22 @@
-site_name: My Docs
+site_name: asciinema docs
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/asciinema
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@asciinema
