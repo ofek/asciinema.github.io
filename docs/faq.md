@@ -1,0 +1,186 @@
+# Frequently Asked Questions (FAQ)
+
+Here you can find answers to most frequently asked questions about asciinema. If
+you don't find an answer to your question join our Matrix room
+`#asciinema:matrix.org` ([web
+client](https://matrix.to/#/#asciinema:matrix.org)) or `#asciinema` IRC channel
+on [Libera.Chat](https://libera.chat/) ([web
+client](https://web.libera.chat/#asciinema)).
+
+## How is "asciinema" pronounced?
+
+_[as-kee-nuh-muh]_.
+
+The word "asciinema" is a combination of English "ASCII" and Ancient Greek
+"κίνημα" (kínēma, "movement").
+
+## Do I have to upload my recordings to asciinema.org?
+
+No.
+
+When you run `asciinema rec` without specifying the filename argument then after
+completing the recording you get a prompt which lets you decide what you want to
+do.
+
+asciinema 2.4+ lets you decide whether to save, upload or discard the recording:
+
+```
+asciinema: recording finished
+(s)ave locally, (u)pload to asciinema.org, (d)iscard
+[s,u,d]? _
+```
+
+Versions prior 2.4 let you confirm or cancel the upload:
+
+```
+asciinema: recording finished
+asciinema: press <enter> to upload to asciinema.org, <ctrl-c> to save locally
+_
+```
+
+However, if you record with:
+
+```asciinema rec demo.cast```
+
+then the recording is saved to a local file in
+[asciicast](../asciicast/)
+format.
+
+You can now replay it directly in your terminal with:
+
+```
+asciinema play demo.cast
+```
+
+At this point you have several options if you want to share it.
+
+First, if you want to host it on asciinema.org in the end then run:
+
+```
+asciinema upload demo.cast
+```
+
+You can view the recording there and share it via secret (default) or public URL.
+
+If you'd rather host it yourself you have following options:
+
+- [use standalone asciinema player](../manual/player/) on your website, or
+- [set up your own asciinema server instance](../manual/server/) instance, and
+  [set API URL
+  accordingly](https://github.com/asciinema/asciinema-server/blob/master/docs/INSTALL.md#using-asciinema-recorder-with-your-instance).
+  
+## How can I delete a recording from asciinema.org?
+
+If you want to manage your recordings (change title/theme, delete) on
+asciinema.org you need to link your "install ID" with asciinema.org user
+account by running:
+
+```
+asciinema auth
+```
+
+The above command displays the URL to open in a web browser to do that. You may
+be asked to log in first. 
+
+Now, open the asciicast page and look for a dropdown with a gear icon. It's
+below the player, on the right side.
+
+Install ID is a random ID ([UUID v4](https://en.wikipedia.org/wiki/Universally_unique_identifier)) generated locally when you run asciinema for the first time, and saved at `$HOME/.config/asciinema/install-id`. It's purpose is to connect local machine with uploaded recordings, so they can later be associated with asciinema.org account. This way we decouple uploading from account creation, allowing them to happen in any order.
+
+**A new install ID is generated on each machine and system user account you use asciinema on, so in order to keep all recordings under a single asciinema.org account you need to run `asciinema auth` on all of those machines. If you followed the above steps and you still can't see the gear dropdown then most likely you have used different local user accounts for recording and auth (i.e. you recorded in a VM or Docker container but you ran `asciinema auth` on your host machine).**
+
+This applies to any [asciinema server](../manual/server/) instance, not just asciinema.org.
+
+## Can I edit/post-process the recording?
+
+Yes, but not (yet) in a way you would expect :)
+
+[asciicasts](../manual/asciicast/) are quite simple newline-delimited JSON
+files. You can edit them easily with any text editor which supports UTF-8. The
+recorded data is more or less a series of print statements, with [ansi escape
+sequences](https://en.wikipedia.org/wiki/ANSI_escape_code) (also known as
+control sequences or control codes). You can add, delete or modify text there.
+There's no tool for visual editing of the screen contents though (due to
+incremental, state-machine based nature of terminal emulators).
+
+## Does asciinema record the passwords I type during recording sessions?
+
+By default asciinema records only terminal output - what you actually see in a
+terminal window. It doesn't record input (key presses). 
+
+Some applications turn off so called "echo mode" when asking for a password, and
+because the typed in characters are not visible they are not recorded. Other
+applications display star characters instead of real characters and asciinema
+records only "******" (a bunch of stars). However, there are applications which
+don't have any precautions and the actual password is visible to the user, and
+in such case it's recorded by asciinema. Make sure you know how the application
+is handling password input before you record and publish a recording.
+
+asciinema 2.0 introduced ability to record key presses with `asciinema rec
+--stdin` option. Recorded input may be used by a player (e.g. [asciinema
+player](../manual/player/) in near future) to display key presses. However,
+`--stdin` basically does key-logging (scoped to a single shell instance), so
+it's disabled by default, and has to be explicitly requested. When this option
+is used then all typed in characters are captured as [stdin ("i")
+events](../manual/asciicast/#i---data-read-from-stdin) in the resulting
+asciicast file. This includes all passwords, even if "echo mode" is turned off.
+When replaying, these chars are not displayed within player's terminal window as
+output, but may be displayed in an overlay (if the player can do it and it's
+enabled).
+
+## Why am I getting `command not found` at the begining of the recording session?
+
+When your record your terminal asciinema starts a new shell instance (as
+indicated by `$SHELL` environment variable) by default. It invokes `exec
+$SHELL`, which in most cases translates to `exec /bin/bash` or `exec /bin/zsh`.
+This means the shell runs as an "interactive shell", but **not as a "login
+shell"**.
+
+If you have functions and/or other shell configuration defined in either
+`.bash_profile`, `.zprofile` or `.profile` file they are not loaded unless the
+shell is started as a login shell.
+
+Some terminal emulators do that (passing "-l" option to the shell command-line),
+some don't. asciinema doesn't.
+
+Worry not, you have several options. You can:
+
+* move this part of configuration to `.bashrc/.zshrc`,
+* record with `asciinema rec -c "/bin/bash -l"` or,
+* add the following setting to your `$HOME/.config/asciinema/config` file:
+
+```
+[record]
+command = /bin/bash -l
+```
+
+## How can I change my asciinema.org profile avatar?
+
+asciinema.org (any [asciinema server](../manual/server/) in general) uses
+gravatar.com for profile avatars. The avatars are based on account email
+address.
+
+If you want to change yours then you can do it at [gravatar.com](https://gravatar.com).
+
+At the moment this is the only option.
+
+## Why my shell prompt/theme isn't working during recording?
+
+See [this answer](#why-am-i-getting-command-not-found-at-the-begining-of-the-recording-session).
+
+## Why `upload failed: Invalid or revoked install ID`?
+
+If you get this error when uploading a recording then it means your local
+install ID has been revoked (you most likely clicked "Revoke" on your account
+settings page). No further uploads with this install ID will be possible.
+
+To re-enable uploads from this machine do this:
+
+1. remove install ID file `~/.config/asciinema/install-id` (also check `~/.asciinema/install-id`)
+2. [login](https://asciinema.org/login/new) to your asciinema.org account
+3. run `asciinema auth` - this will generate new local install ID
+4. open the printed URL - this will link your new install ID to your account
+
+## Why some of my custom shell functions are not available during recording?
+
+See [this answer](#why-am-i-getting-command-not-found-at-the-begining-of-the-recording-session).

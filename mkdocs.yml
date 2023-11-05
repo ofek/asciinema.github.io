@@ -1,22 +1,91 @@
 site_name: asciinema docs
 
+repo_url: https://github.com/asciinema/asciinema
+
 theme:
   name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - navigation.tabs
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.sections
+    - navigation.indexes
     - navigation.top
-    - toc.integrate
     - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
   language: en
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Manual:
+    - manual/index.md
+    - CLI:
+      - manual/cli/index.md
+      - manual/cli/installation.md
+      - manual/cli/usage.md
+      - Configuration file: manual/cli/config.md
+    - Player:
+      - manual/player/index.md
+      - manual/player/setup.md
+      - manual/player/configuration.md
+    - Server:
+      - manual/server/index.md
+      - manual/server/user-account.md
+      - manual/server/recording-settings.md
+      - manual/server/sharing.md
+      - manual/server/embedding.md
+      - Self-hosting:
+        - manual/server/hosting/index.md
+        - manual/server/hosting/upgrading.md
+        - manual/server/hosting/admin.md
+        - manual/server/hosting/customization.md
+    - AGG:
+      - manual/agg/index.md
+      - manual/agg/installation.md
+      - manual/agg/usage.md
+    - File format:
+      - manual/asciicast/index.md
+  - FAQ: faq.md
+  - Blog: https://blog.asciinema.org
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/asciinema
+      name: asciinema on Github
     - icon: fontawesome/brands/mastodon
       link: https://fosstodon.org/@asciinema
+      name: asciinema on Mastodon
