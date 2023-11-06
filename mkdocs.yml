@@ -64,7 +64,8 @@ nav:
       - manual/agg/installation.md
       - manual/agg/usage.md
     - File format:
-      - manual/asciicast/index.md
+      - manual/asciicast/v2.md
+      - manual/asciicast/v1.md
   - FAQ: faq.md
   - Blog: https://blog.asciinema.org
 
@@ -74,6 +75,7 @@ markdown_extensions:
       permalink: true
   - pymdownx.highlight
   - pymdownx.inlinehilite
+  - pymdownx.superfences
 
 extra_css:
   - stylesheets/extra.css
