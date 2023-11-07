@@ -4,9 +4,7 @@ __agg__ is a command-line tool for generating animated GIF files from terminal
 session recordings. It supports conversion from [asciicast v2](../asciicast/v2/)
 files produced by [asciinema recorder](../cli/) (aka "asciinema CLI").
 
-It uses Kornel Lesiński's excellent
-[gifski](https://github.com/ImageOptim/gifski) library to produce optimized,
-high quality GIF output with accurate frame timing.
+---
 
 Notable features:
 
@@ -21,5 +19,11 @@ Example GIF file generated with agg:
 
 ![Example GIF file generated with agg](demo.gif)
 
-agg is free and open-source software. Source code is available at
+It uses Kornel Lesiński's excellent
+[gifski](https://github.com/ImageOptim/gifski) library to produce optimized,
+high quality GIF output with accurate frame timing.
+
+---
+
+agg is a free and open-source software. Source code and license available at
 [github.com/asciinema/agg](https://github.com/asciinema/agg).
