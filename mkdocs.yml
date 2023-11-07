@@ -79,9 +79,11 @@ markdown_extensions:
   - pymdownx.superfences
 
 extra_css:
+  - stylesheets/player-3.6.3.css
   - stylesheets/extra.css
 
 extra_javascript:
+  - javascripts/player-3.6.3.min.js
   - javascripts/extra.js
 
 extra:
