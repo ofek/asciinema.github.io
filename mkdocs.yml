@@ -47,8 +47,15 @@ nav:
       - Configuration file: manual/cli/config.md
     - Player:
       - manual/player/index.md
-      - manual/player/setup.md
-      - manual/player/configuration.md
+      - manual/player/quick-start.md
+      - manual/player/loading.md
+      - manual/player/options.md
+      - manual/player/api.md
+      - manual/player/fonts.md
+      - manual/player/markers.md
+      - manual/player/shortcuts.md
+      - manual/player/parsers.md
+      - manual/player/upgrading.md
     - Server:
       - manual/server/index.md
       - manual/server/user-account.md
@@ -71,12 +78,17 @@ nav:
   - Blog: https://blog.asciinema.org
 
 markdown_extensions:
+  - attr_list
   - admonition
+  - tables
   - toc:
       permalink: true
+  - pymdownx.details
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
 
 extra_css:
   - stylesheets/player-3.6.3.css

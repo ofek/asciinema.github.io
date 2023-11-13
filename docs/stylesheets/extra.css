@@ -1,0 +1,7 @@
+article .player {
+  margin: 2em 0;
+}
+
+.ap-player .ap-overlay {
+  z-index: 2;
+}
