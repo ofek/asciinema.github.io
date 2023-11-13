@@ -1,4 +1,5 @@
 site_name: asciinema docs
+site_author: Marcin Kulik
 
 repo_url: https://github.com/asciinema/asciinema
 
@@ -109,3 +110,5 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/asciinema
       name: asciinema on X (Twitter)
+
+copyright: Copyright &copy; 2023 Marcin Kulik
