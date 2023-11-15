@@ -43,9 +43,13 @@ nav:
     - manual/index.md
     - CLI:
       - manual/cli/index.md
+      - manual/cli/quick-start.md
       - manual/cli/installation.md
       - manual/cli/usage.md
-      - Configuration file: manual/cli/config.md
+      - manual/cli/configuration.md
+      - manual/cli/markers.md
+      - manual/cli/shortcuts.md
+      - manual/cli/desktop-notifications.md
     - Player:
       - manual/player/index.md
       - manual/player/quick-start.md

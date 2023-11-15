@@ -1,0 +1,115 @@
+# Configuration
+
+## Config file
+
+You can configure asciinema by creating config file at
+`$HOME/.config/asciinema/config`.
+
+Here's an overview of all available options for each configuration section.
+
+```ini title="~/.config/asciinema/config"
+[api]
+
+; API server URL, default: https://asciinema.org
+; If you run your own instance of asciinema-server then set its address here
+; It can also be overriden by setting ASCIINEMA_API_URL environment variable
+url = https://asciinema.example.com
+
+[record]
+
+; Command to record, default: $SHELL
+command = /bin/bash -l
+
+; Enable stdin (keyboard) recording, default: no
+stdin = yes
+
+; List of environment variables to capture, default: SHELL,TERM
+env = SHELL,TERM,USER
+
+; Limit recorded terminal inactivity to max n seconds, default: off
+idle_time_limit = 2
+
+; Answer "yes" to all interactive prompts, default: no
+yes = true
+
+; Be quiet, suppress all notices/warnings, default: no
+quiet = true
+
+; Define hotkey for pausing recording (suspending capture of output),
+; default: C-\ (control + backslash)
+pause_key = C-p
+
+; Define hotkey for adding a marker, default: none
+add_marker_key = C-x
+
+; Define hotkey prefix key - when defined other recording hotkeys must
+; be preceeded by it, default: no prefix
+prefix_key = C-a
+
+[play]
+
+; Playback speed (can be fractional), default: 1
+speed = 2
+
+; Limit replayed terminal inactivity to max n seconds, default: off
+idle_time_limit = 1
+
+; Define hotkey for pausing/resuming playback,
+; default: space
+pause_key = p
+
+; Define hotkey for stepping through playback, a frame at a time,
+; default: . (dot)
+step_key = s
+
+; Define hotkey for jumping to the next marker,
+; default: ]
+next_marker_key = m
+
+[notifications]
+; Desktop notifications are displayed in several situations, e.g. when
+; pausing/resuming the capture of terminal with C-\ keyboard shortcut.
+
+; Should desktop notifications be enabled, default: yes
+enabled = no
+
+; Custom notification command
+; asciinema automatically detects available desktop notification system
+; (notify-send on GNU/Linux, osacript on macOS). Custom command can be
+; used if needed.
+; When invoked, environment variable $TEXT contains notification text, while
+; $ICON_PATH contains path to the asciinema logo image.
+command = tmux display-message "$TEXT"
+```
+
+A minimal config file could look like this:
+
+```ini
+[record]
+idle_time_limit = 2
+```
+
+## Environment variables
+
+### `ASCIINEMA_API_URL`
+
+Specifies base URL of an [asciinema server](../server/), used for recording uploads.
+
+Defaults to `https://asciinema.org`. Can also be set in the config file as
+`api.url`.
+
+If you [self-host asciinema server](../../server/self-hosting/) then you should set
+`ASCIINEMA_API_URL` to its base URL, e.g. `https://asciinema.example.com`.
+
+### `ASCIINEMA_CONFIG_HOME`
+
+Specifies config directory path.
+
+Defaults to `$XDG_CONFIG_HOME/asciinema` if `XDG_CONFIG_HOME` is set, otherwise
+defaults to `$HOME/.config/asciinema`.
+
+!!! note
+
+    asciinema versions prior to 1.1 used `$HOME/.asciinema` as config directory.
+    If you have it there it's recommended to `mv $HOME/.asciinema
+    $HOME/.config/asciinema`.

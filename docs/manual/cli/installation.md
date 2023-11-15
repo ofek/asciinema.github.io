@@ -1,138 +1,253 @@
 # Installation
 
-There are several ways to get asciinema recorder:
+asciinema CLI is available in most package repositories on Linux, macOS, and
+FreeBSD. Search for a package named `asciinema`. 
 
-- [Installing via Pip](#installing-via-pip)
-- [Installing on Linux](#installing-on-linux)
-- [Installing on macOS](#installing-on-macos)
-- [Installing on FreeBSD](#installing-on-freebsd)
-- [Installing on OpenBSD](#installing-on-openbsd)
-- [Running in a container](#running-in-a-container)
-- [Running from source](#running-from-source)
+You can also install the [PyPI](#pypi) package, use a [container
+image](#container-image), or [run from source](#from-source).
 
-If you use other operating system and you can build a native package for it then
-don't hesitate, do it and let us know. We have [Github
-issue](https://github.com/asciinema/asciinema/issues/116) where we track new
-releases and packaging progress.
+## PyPI
 
-## Installing via Pip
-{: #installing-via-pip}
+asciinema CLI is available on [PyPI](https://pypi.python.org/pypi/asciinema) and
+can be installed with `pipx`.
 
-asciinema is available on [PyPI](https://pypi.python.org/pypi/asciinema) and can
-be installed with pip (Python 3 required):
+=== "pipx"
 
-    sudo pip3 install asciinema
+    If you have [pipx](https://pypa.github.io/pipx/) installed:
 
-This is the universal installation method for all operating systems, which
-always provides the latest version.
+    ```sh
+    pipx install asciinema
+    ```
 
-## Installing on Linux
-{: #installing-on-linux}
+=== "pip"
+
+      Alternatively use `pip` (Python 3 with `setuptools` required):
+
+      ```sh
+      python3 -m pip install asciinema
+      ```
+
+This is a universal installation method for all operating systems, which always
+provides the latest released version.
+
+## Linux
 
 ### Arch Linux
 
-    pacman -S asciinema
+```sh
+sudo pacman -S asciinema
+```
 
 ### Debian
 
-    sudo apt-get install asciinema
+```sh
+sudo apt install asciinema
+```
 
 ### Fedora
 
-For Fedora < 22:
+```sh
+sudo dnf install asciinema
+```
 
-    sudo yum install asciinema
+### Gentoo
 
-For Fedora >= 22:
-
-    sudo dnf install asciinema
-
-### Gentoo Linux
-
-    emerge -av asciinema
+```sh
+sudo emerge -av asciinema
+```
 
 ### NixOS / Nix
 
+=== "nix-env"
+
+    ```sh
     nix-env -i asciinema
+    ```
+
+=== "nix-shell"
+
+    ```sh
+    nix-shell -p asciinema
+    ```
+
+=== "NixOS configuration"
+
+    ```nix title="/etc/nixos/configuration.nix"
+    environment.systemPackages = [
+      pkgs.asciinema
+    ]
+    ```
+
+=== "home-manager"
+
+    ```nix title="~/.config/home-manager/home.nix"
+    home.packages = [
+      pkgs.asciinema
+    ]
+    ```
 
 ### openSUSE
 
-    zypper in asciinema
+    sudo zypper install asciinema
 
 ### Ubuntu
 
+=== "22.04 or newer"
+
+    ```sh
+    sudo apt install asciinema
+    ```
+
+=== "PPA"
+
+    [David Adam (zanchey)](https://launchpad.net/~zanchey) maintains asciinema PPA.
+
+    ```sh
     sudo apt-add-repository ppa:zanchey/asciinema
-    sudo apt-get update
-    sudo apt-get install asciinema
+    sudo apt update
+    sudo apt install asciinema
+    ```
 
-## Installing on macOS
-{: #installing-on-macos}
+## macOS
 
-### Homebrew
+=== "Homebrew"
 
+    ```sh
     brew install asciinema
+    ```
 
-### MacPorts
+=== "MacPorts"
 
+    ```sh
     sudo port selfupdate && sudo port install asciinema
+    ```
 
-### Nix
+=== "Nix"
 
+    ```sh
     nix-env -i asciinema
+    ```
 
-## Installing on FreeBSD
-{: #installing-on-freebsd}
+## FreeBSD
 
-### Ports
+=== "Ports"
 
+    ```sh
     cd /usr/ports/textproc/py-asciinema && make install
+    ```
 
-### Packages
+=== "Packages"
 
+    ```sh
     pkg install py39-asciinema
+    ```
 
-## Installing on OpenBSD
-{: #installing-on-openbsd}
+## OpenBSD
 
-    pkg_add asciinema
+```sh
+pkg_add asciinema
+```
 
-## Running in a container
-{: #running-in-a-container}
+## Container image
 
-asciinema Docker image is based on [Ubuntu
+asciinema OCI container image is based on [Ubuntu
 22.04](https://releases.ubuntu.com/22.04/) and has the latest version of
 asciinema recorder pre-installed.
 
-```sh
-docker pull ghcr.io/asciinema/asciinema
-```
+Pull the container:
 
-When running it don't forget to allocate a pseudo-TTY (`-t`), keep STDIN open
-(`-i`) and mount config directory volume (`-v`):
+=== "podman"
 
-```sh
-docker run --rm -it -v "${HOME}/.config/asciinema:/root/.config/asciinema" ghcr.io/asciinema/asciinema rec
-```
+    ```sh
+    podman pull ghcr.io/asciinema/asciinema
+    ```
 
-Container's entrypoint is set to `/usr/local/bin/asciinema` so you can run the
-container with any arguments you would normally pass to `asciinema` binary (see
-Usage section for commands and options).
+=== "docker"
 
-There's not much software installed in this image though. In most cases you may
-want to install extra programs before recording. One option is to derive new
-image from this one (start your custom Dockerfile with `FROM
+    ```sh
+    docker pull ghcr.io/asciinema/asciinema
+    ```
+
+Container's entrypoint is set to `asciinema` binary therefore you can run the
+container with arguments you would normally pass to `asciinema` command (see
+[Usage](../usage/) for commands and options).
+
+When running the container it's essential to allocate a pseudo-TTY (`-t`) and
+keep STDIN open (`-i`).
+
+=== "podman"
+
+    ```sh
+    podman run --rm -it ghcr.io/asciinema/asciinema
+    ```
+
+=== "docker"
+
+    ```sh
+    docker run --rm -it ghcr.io/asciinema/asciinema
+    ```
+
+You can optionally bind-mount config directory (`-v`):
+
+=== "podman"
+
+    ```sh
+    podman run --rm -it -v "$HOME/.config/asciinema:/root/.config/asciinema" ghcr.io/asciinema/asciinema
+    ```
+
+=== "docker"
+
+    ```sh
+    docker run --rm -it -v "$HOME/.config/asciinema:/root/.config/asciinema" ghcr.io/asciinema/asciinema
+    ```
+
+!!! note
+
+    If you plan to upload your recordings to
+    [asciinema.org](https://asciinema.org) then it's recommended to preserve
+    asciinema config directory between runs, e.g. by bind-mounting it as shown
+    above. This directory stores [Install ID](/broken), which links all
+    recordings uploaded from a given system to your asciinema.org user account.
+
+To be able to save the recordings locally bind-mount your working directory like this:
+
+=== "podman"
+
+    ```sh
+    podman run --rm -it -v "$PWD:/root" --workdir=/data ghcr.io/asciinema/asciinema rec demo.cast
+    ```
+
+=== "docker"
+
+    ```sh
+    docker run --rm -it -v "$PWD:/root" --workdir=/data ghcr.io/asciinema/asciinema rec demo.cast
+    ```
+
+There's not much software installed in this image. In most cases you may want to
+install extra programs before recording. One option is to derive a new image
+from this one (start your custom Dockerfile with `FROM
 ghcr.io/asciinema/asciinema`). Another option is to start the container with
-`/bin/bash` as the entrypoint, install extra packages and manually start
-`asciinema rec`:
+`/bin/bash` as the entrypoint, install extra packages and then start recording
+with `asciinema rec`:
 
-```console
-docker run --rm -it -v "${HOME}/.config/asciinema:/root/.config/asciinema" --entrypoint=/bin/bash ghcr.io/asciinema/asciinema rec
-root@6689517d99a1:~# apt-get install foobar
-root@6689517d99a1:~# asciinema rec
-```
+=== "podman"
 
-It is also possible to run the docker container as a non-root user, which has
-security benefits. You can specify a user and group id at runtime to give the
+    ```console
+    podman run --rm -it --entrypoint=/bin/bash ghcr.io/asciinema/asciinema
+    root@6689517d99a1:~# apt install foobar
+    root@6689517d99a1:~# asciinema rec demo.cast
+    ```
+
+=== "docker"
+
+    ```console
+    docker run --rm -it --entrypoint=/bin/bash ghcr.io/asciinema/asciinema
+    root@6689517d99a1:~# apt install foobar
+    root@6689517d99a1:~# asciinema rec demo.cast
+    ```
+
+With Docker, it's also possible to run the container as a non-root user, which
+has security benefits. You can specify user and group id at runtime to give the
 application permission similar to the calling user on your host.
 
 ```sh
@@ -141,18 +256,24 @@ docker run --rm -it \
     --user="$(id -u):$(id -g)" \
     --volume="${HOME}/.config/asciinema:/run/user/$(id -u)/.config/asciinema:rw" \
     --volume="${PWD}:/data:rw" \
-    --workdir='/data' \
+    --workdir=/data \
     ghcr.io/asciinema/asciinema rec
 ```
 
-## Running from source
-{: #running-from-source}
+!!! note
 
-If none of the above works for you (or you want to help with development) just
-clone the repo and run latest version of asciinema straight from the main
-branch:
+    Podman has [first class support for rootless
+    operation](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md).
 
-    git clone https://github.com/asciinema/asciinema.git
-    cd asciinema
-    git checkout main
-    python3 -m asciinema --version
+## From source
+
+If none of the above works for you (or you want to modify the code) then clone
+the [git repository](https://github.com/asciinema/asciinema.git) and run
+asciinema CLI straight from the checkout:
+
+```sh
+git clone https://github.com/asciinema/asciinema.git
+cd asciinema
+git checkout main
+python3 -m asciinema --version
+```
