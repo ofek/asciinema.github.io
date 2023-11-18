@@ -71,25 +71,26 @@ If you'd rather host it yourself you have following options:
   
 ## How can I delete a recording from asciinema.org?
 
-If you want to manage your recordings (change title/theme, delete) on
-asciinema.org you need to link your "install ID" with asciinema.org user
-account by running:
+In order to be able to delete a recording you first need to associate it with an
+asciinema.org user account. You can do that by using [asciinema
+auth](../manual/cli/usage/#asciinema-auth) command. Once you complete this step
+look for a dropdown with a gear icon on recording page (it's below the player,
+on the right side).
 
-```
-asciinema auth
-```
+If you don't want to create an asciinema.org account only to delete a recording,
+you don't need to do anything. All recordings not associated with a user account
+are automatically deleted 7 days after they were uploaded.
 
-The above command displays the URL to open in a web browser to do that. You may
-be asked to log in first. 
+!!! note
 
-Now, open the asciicast page and look for a dropdown with a gear icon. It's
-below the player, on the right side.
+    A new install ID is generated on each system you use asciinema on, so in
+    order to keep all recordings under a single asciinema.org account you need
+    to run `asciinema auth` on all of those systems.
 
-Install ID is a random ID ([UUID v4](https://en.wikipedia.org/wiki/Universally_unique_identifier)) generated locally when you run asciinema for the first time, and saved at `$HOME/.config/asciinema/install-id`. It's purpose is to connect local machine with uploaded recordings, so they can later be associated with asciinema.org account. This way we decouple uploading from account creation, allowing them to happen in any order.
-
-**A new install ID is generated on each machine and system user account you use asciinema on, so in order to keep all recordings under a single asciinema.org account you need to run `asciinema auth` on all of those machines. If you followed the above steps and you still can't see the gear dropdown then most likely you have used different local user accounts for recording and auth (i.e. you recorded in a VM or Docker container but you ran `asciinema auth` on your host machine).**
-
-This applies to any [asciinema server](../manual/server/) instance, not just asciinema.org.
+    If you followed the above steps and you still can't see the gear dropdown
+    then most likely you have used different local user accounts for recording
+    and for auth (e.g. you recorded in a VM or Docker container but you ran
+    `asciinema auth` on your host machine).
 
 ## Can I edit/post-process the recording?
 
@@ -106,27 +107,33 @@ incremental, state-machine based nature of terminal emulators).
 ## Does asciinema record the passwords I type during recording sessions?
 
 By default asciinema records only terminal output - what you actually see in a
-terminal window. It doesn't record input (key presses). 
+terminal window. It doesn't record input, i.e. key presses.
 
-Some applications turn off so called "echo mode" when asking for a password, and
-because the typed in characters are not visible they are not recorded. Other
-applications display star characters instead of real characters and asciinema
-records only "******" (a bunch of stars). However, there are applications which
-don't have any precautions and the actual password is visible to the user, and
-in such case it's recorded by asciinema. Make sure you know how the application
-is handling password input before you record and publish a recording.
+Some applications turn off so called "echo mode" when asking for a password,
+hiding the password.  Because the typed in password characters are not printed
+they're not recorded. Other applications display star characters instead of real
+characters and asciinema records only "\*\*\*" (a bunch of stars). However,
+there are applications which don't have any precautions and the actual password
+is echoed to a terminal. In such case the password would be recorded by
+asciinema. Make sure you know how an application is handling password input
+before you record it.
 
-asciinema 2.0 introduced ability to record key presses with `asciinema rec
---stdin` option. Recorded input may be used by a player (e.g. [asciinema
-player](../manual/player/) in near future) to display key presses. However,
-`--stdin` basically does key-logging (scoped to a single shell instance), so
-it's disabled by default, and has to be explicitly requested. When this option
-is used then all typed in characters are captured as [stdin ("i")
-events](../manual/asciicast/#i---data-read-from-stdin) in the resulting
-asciicast file. This includes all passwords, even if "echo mode" is turned off.
-When replaying, these chars are not displayed within player's terminal window as
-output, but may be displayed in an overlay (if the player can do it and it's
-enabled).
+asciinema CLI 2.0 introduced ability to record key presses with `asciinema rec
+--stdin` option. When this option is used then all typed in characters are
+captured as [stdin (i)
+events](../manual/asciicast/v2/#i-input-data-read-from-a-terminal) in the
+resulting asciicast file. This __includes all passwords typed in from a
+keyboard__, even if "echo mode" is turned off. When replaying, these chars are
+not displayed as output, but they could be used with [asciinema
+player](../manual/player/) to implement [custom event handler for input
+events](../manual/player/api/#input-event).
+
+`--stdin` basically does keylogging that is scoped to a _single_ shell instance
+/ terminal tab. Given its sensitive nature it's disabled by default and has to
+be explicitly enabled (opted-in). However, even if enabled, captured key presses
+are saved in the local recording file only. Unless you publish your recording on
+the internet, e.g. on [asciinema.org](https://asciinema.org), it all stays with
+you.
 
 ## Why am I getting `command not found` at the begining of the recording session?
 
@@ -176,10 +183,10 @@ settings page). No further uploads with this install ID will be possible.
 
 To re-enable uploads from this machine do this:
 
-1. remove install ID file `~/.config/asciinema/install-id` (also check `~/.asciinema/install-id`)
+1. remove the install ID file `~/.config/asciinema/install-id` (also check `~/.asciinema/install-id`)
 2. [login](https://asciinema.org/login/new) to your asciinema.org account
 3. run `asciinema auth` - this will generate new local install ID
-4. open the printed URL - this will link your new install ID to your account
+4. open the printed URL - this will re-authenticate your system with you asciinema.org account
 
 ## Why some of my custom shell functions are not available during recording?
 
