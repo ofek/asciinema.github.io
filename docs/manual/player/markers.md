@@ -19,8 +19,8 @@ listening for [`marker` event](#marker-event), and they can also be used for
 There two ways of specifying markers for use in the player:
 
 - using [`markers` option](../options/#markers),
-- embedding markers in the recording - see [Markers](../../cli/#markers) in CLI
-  section for details.
+- embedding markers in the recording - see [Markers](../../cli/markers/) in the
+  CLI section for details.
 
 ## Setting markers
 
@@ -136,7 +136,7 @@ player.addEventListener('marker', ({ index, time, label }) => {
 
 <div class="player" id="player-manual-player-markers-seeking"></div>
 
-## Navigation with keyboard
+## Keyboard navigation
 
 The following keyboard shortcuts can be used to navigate between markers when
 the player element has input focus:

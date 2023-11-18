@@ -1,11 +1,11 @@
 document$.subscribe(function() {
   // manual -> cli
 
-  createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-cli-1', { poster: 'npt:1:17' });
+  createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-cli-intro', { poster: 'npt:1:17' });
 
   // manual -> player
 
-  createPlayer('misc.cast', 'player-manual-player-1', { poster: 'npt:20' });
+  createPlayer('misc.cast', 'player-manual-player-intro', { poster: 'npt:20' });
 
   // manual -> player -> quickstart
 
