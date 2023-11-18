@@ -120,7 +120,7 @@ at the end. For example, the equivalent of the built-in Monokai theme is:
 --theme 272822,f8f8f2,272822,f92672,a6e22e,f4bf75,66d9ef,ae81ff,a1efe4,f8f8f2,75715e,f92672,a6e22e,f4bf75,66d9ef,ae81ff,a1efe4,f9f8f5
 ```
 
-## Additional GIF optimization
+## GIF optimization
 
 GIF encoder used by agg, [gifski](https://github.com/ImageOptim/gifski),
 produces great looking GIF files, although this often comes at a cost - file

@@ -1,8 +1,16 @@
 # agg - asciinema gif generator
 
 __agg__ is a command-line tool for generating animated GIF files from terminal
-session recordings. It supports conversion from [asciicast v2](../asciicast/v2/)
-files produced by [asciinema recorder](../cli/) (aka "asciinema CLI").
+session recordings.
+
+It supports conversion from [asciicast v2](../asciicast/v2/) files produced by
+[asciinema recorder](../cli/). It uses Kornel Lesiński's excellent
+[gifski](https://github.com/ImageOptim/gifski) library to produce optimized,
+high quality GIF output with accurate frame timing.
+
+Example GIF file generated with agg:
+
+![Example GIF file generated with agg](demo.gif)
 
 ---
 
@@ -13,15 +21,7 @@ Notable features:
 - multiple built-in color themes, ability to use a custom theme,
 - font family and font size customization,
 - adjustable animation speed,
-- emojis (mono).
-
-Example GIF file generated with agg:
-
-![Example GIF file generated with agg](demo.gif)
-
-It uses Kornel Lesiński's excellent
-[gifski](https://github.com/ImageOptim/gifski) library to produce optimized,
-high quality GIF output with accurate frame timing.
+- emoji support (mono).
 
 ---
 
