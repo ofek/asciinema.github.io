@@ -7,6 +7,9 @@ recording a terminal with [asciinema CLI](../../cli/) (`asciinema rec demo.cast`
 downloading a `.cast ` file from [asciinema.org](https://asciinema.org) or a
   [self-hosted asciinema server](../../server/self-hosting/).
 
+For a broader overview of what's possible with asciinema check out the
+[introductory guide](../../../getting-started/).
+
 ## Installation
 
 There are two ways of installing asciinema player on your website.
