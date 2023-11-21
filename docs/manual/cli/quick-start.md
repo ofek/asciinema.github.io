@@ -9,7 +9,7 @@ For a broader overview of what's possible with asciinema check out the
 ## Install asciinema CLI
 
 asciinema CLI is available in most package repositories on Linux, macOS, and
-FreeBSD. Search for a package named `asciinema`. 
+FreeBSD. Search for a package named `asciinema`.
 
 === "pipx"
 
@@ -102,11 +102,11 @@ you can use to watch your recording in a web browser.
     This step is completely optional. You can embed your recordings on a web
     page with [asciinema player](../../player/), or publish them to a
     self-hosted [asciinema server](../../server/) instance.
- 
+
 ## Record and publish in one command
 
-If you ommit the filename the recorder saves the session to a temporary file.
-When the session ends asciinema enters interactive mode, which lets you decide
+If you ommit the filename the recording is saved to a temporary file. When the
+recording session ends asciinema enters interactive mode, which lets you decide
 what to do:
 
 ```console
@@ -115,7 +115,7 @@ asciinema: recording asciicast to /tmp/tmpo8_612f8-ascii.cast
 asciinema: press <ctrl-d> or type "exit" when you're done
 $ echo hello
 hello
-$ exit 
+$ exit
 asciinema: recording finished
 (s)ave locally, (u)pload to asciinema.org, (d)iscard
 [s,u,d]? _
