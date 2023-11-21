@@ -178,7 +178,7 @@ it can be easily changed to [point to another server
 instance](../configuration/#asciinema_api_url).
 
 It's likely that you would want to manage this and other uploaded recordings at
-some point, e.g. change their settings or delete them. See [asciinema
+some point, e.g. set a title or change terminal color theme. See [asciinema
 auth](#asciinema-auth) command below for more details on how to ensure secure
 access to your recordings.
 
