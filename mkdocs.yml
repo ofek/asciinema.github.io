@@ -37,8 +37,10 @@ theme:
   favicon: assets/logo.svg
 
 nav:
-  - Home: index.md
-  - Getting Started: getting-started.md
+  - About:
+    - index.md
+    - community.md
+  - getting-started.md
   - Manual:
     - manual/index.md
     - CLI:
