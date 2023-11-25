@@ -40,6 +40,7 @@ nav:
   - About:
     - index.md
     - community.md
+    - integrations.md
     - donations.md
     - consulting.md
   - getting-started.md
