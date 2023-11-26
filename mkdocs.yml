@@ -39,6 +39,7 @@ theme:
 nav:
   - About:
     - index.md
+    - how-it-works.md
     - community.md
     - integrations.md
     - donations.md
