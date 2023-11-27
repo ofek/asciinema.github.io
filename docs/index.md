@@ -1,17 +1,46 @@
-# Welcome to asciinema docs
+<style>
+.md-typeset h1 {
+  display: none;
+}
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+pre.ascii-logo {
+  margin: 0 0 3em 0;
+  font-weight: bold;
+}
+</style>
 
-## Commands
+<pre class="ascii-logo">
+  __ _ ___  ___(_|_)_ __   ___ _ __ ___   __ _
+ / _` / __|/ __| | | '_ \ / _ \ '_ ` _ \ / _` |
+| (_| \__ \ (__| | | | | |  __/ | | | | | (_| |
+ \__,_|___/\___|_|_|_| |_|\___|_| |_| |_|\__,_|
+</pre>
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+__asciinema__ is a suite of tools for recording, replaying, and sharing terminal
+sessions. Its typical use cases include creating tutorials, demonstrating
+command-line tools, and sharing reproducible bug reports. It focuses on
+simplicity and interoperability, which makes it a popular choice among computer
+users working with the command-line, such as developers or system
+administrators.
 
-## Project layout
+asciinema is free and open-source software (FOSS) created by [Marcin
+Kulik](https://hachyderm.io/@ku1ik). The source code is available at
+[github.com/asciinema](https://github.com/asciinema).
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+To learn more about the project itself, read through this section. It explains
+[how asciinema works](../how-it-works/), how to engage with [the
+community](../community/), what [integrations](../integrations/) people have
+built around the project, and last but not least, how to [support the
+project](../donations/).
+
+To get up to speed with asciinema follow the [getting started
+guide](../getting-started/). It's a short, hands-on tutorial, which demonstrates
+what's possible, and leaves you with a good high-level overview of the tool.
+
+To get deeper navigate to the [manual](../manual/), which covers installation,
+configuration and usage of each asciinema component ([CLI](../manual/cli/),
+[player](../manual/player/), [server](../manual/server/)). It also includes the
+specification of the [file format](../manual/asciicast/v/2) used by asciinema.
+
+If you're looking for something specific you can use the search bar at the top
+of the page.
