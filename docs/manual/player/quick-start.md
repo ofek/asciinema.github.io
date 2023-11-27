@@ -155,11 +155,11 @@ document.getElementById('prev-marker-button').addEventListener('click', e => {
 });
 ```
 
+Below is the result. Go ahead and use the big buttons below the player.
+
 <div class="player" id="player-manual-player-quickstart-1"></div>
 
 [Play](#){ .md-button #play-button } &nbsp; [Pause](#){ .md-button #pause-button } &nbsp; [Prev marker](#){ .md-button #prev-marker-button } &nbsp; [Next marker](#){ .md-button #next-marker-button }
-
-Go ahead and use the buttons above.
 
 That wraps up our quick start guide. There's way more to the player than we
 covered here though. Check out the rest of the documentation for further
