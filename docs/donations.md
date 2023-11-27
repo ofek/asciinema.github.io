@@ -41,7 +41,7 @@ funds transfer option.
 
 ## Corporate sponsorship
 
-If your company uses asciinema, either in a product or internally, then please
+If your company uses asciinema, either in a product or internally, please
 consider giving back by becoming a sponsor.
 
 Also, if your product's target audience overlaps with asciinema userbase
@@ -68,4 +68,4 @@ class="email">donations@asci<b>inema.org</b>inema.org</span>.
 Another way of supporting the project is to use [consulting
 services](../consulting/) offered by [asciinema's lead
 developer](https://hachyderm.io/@ku1ik). If asciinema doesn't support your
-use-case and you wish it did then consider this option. It's a win-win!
+use-case and you wish it did, consider this option. It's a win-win!
