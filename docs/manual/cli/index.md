@@ -37,6 +37,6 @@ Notable features:
 
 ---
 
-asciinema CLI is a free and open-source software. Source code and license
+asciinema CLI is free and open-source software (FOSS). Source code and license
 available at
 [github.com/asciinema/asciinema](https://github.com/asciinema/asciinema).

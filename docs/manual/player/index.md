@@ -51,6 +51,6 @@ Notable features:
 
 ---
 
-asciinema player is a free and open-source software. Source code and license
-available at
+asciinema player is free and open-source software (FOSS). Source code and
+license available at
 [github.com/asciinema/asciinema-player](https://github.com/asciinema/asciinema-player).

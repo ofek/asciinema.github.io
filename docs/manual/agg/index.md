@@ -25,5 +25,5 @@ Notable features:
 
 ---
 
-agg is a free and open-source software. Source code and license available at
-[github.com/asciinema/agg](https://github.com/asciinema/agg).
+agg is free and open-source software (FOSS). Source code and license available
+at [github.com/asciinema/agg](https://github.com/asciinema/agg).
