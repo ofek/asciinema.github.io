@@ -127,8 +127,8 @@ in the following player:
 
 <script async id="asciicast-569727" src="https://asciinema.org/a/569727.js"></script>
 
-If you prefer not to rely on asciinema.org for your embedded demos then you can
-use the standalone player on your website like this:
+If you prefer not to rely on asciinema.org for your embedded demos, you can use
+the standalone player on your website like this:
 
 ```html
 <!DOCTYPE html>
