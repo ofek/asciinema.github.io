@@ -8,7 +8,8 @@ include updates on new releases, development insights, tips & tricks.
 
 When posting about asciinema don't forget to use `#asciinema` hashtag!
 
-_Please don't use Mastodon to report bugs or seek help._
+_Please don't use Mastodon to report bugs or seek help. Instead use one of the
+alternatives below (help), or use an issue tracker (bugs)._
 
 ## Forum
 
