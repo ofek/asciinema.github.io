@@ -40,7 +40,7 @@ what's possible, and leaves you with a good high-level overview of the tool.
 To get deeper navigate to the [manual](../manual/), which covers installation,
 configuration and usage of each asciinema component ([CLI](../manual/cli/),
 [player](../manual/player/), [server](../manual/server/)). It also includes the
-specification of the [file format](../manual/asciicast/v/2) used by asciinema.
+specification of the [file format](../manual/asciicast/v2/) used by asciinema.
 
 If you're looking for something specific you can use the search bar at the top
 of the page.
