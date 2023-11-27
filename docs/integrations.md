@@ -1,7 +1,7 @@
 # Integrations
 
-There are many tools and integrations built for asciinema. Below is a sample of
-cool things out there (in alphabetical order):
+There are many tools and integrations built for asciinema. Below is a selection
+of cool things out there (in alphabetical order):
 
 - [ansible-role-asciinema](https://github.com/darkwizard242/ansible-role-asciinema) - Ansible role for asciinema
 - [asciifx](https://github.com/apparebit/asciifx) - A special effects shop for asciinema
