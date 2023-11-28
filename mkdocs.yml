@@ -22,8 +22,6 @@ theme:
   font: false
   features:
     - navigation.tabs
-    - navigation.instant
-    - navigation.instant.progress
     - navigation.sections
     - navigation.indexes
     - navigation.top
