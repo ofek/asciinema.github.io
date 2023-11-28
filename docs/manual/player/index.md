@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # asciinema player
 
 __asciinema player__ is a web player for terminal session recordings.

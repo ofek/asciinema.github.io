@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Integrations
 
 There are many tools and integrations built for asciinema. Below is a selection

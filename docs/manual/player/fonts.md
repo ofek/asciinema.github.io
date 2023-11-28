@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Fonts
 
 By default the player uses a web safe, platform specific monospace font with

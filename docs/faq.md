@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Frequently Asked Questions (FAQ)
 
 Here you can find answers to most frequently asked questions about asciinema. If
@@ -68,7 +73,7 @@ If you'd rather host it yourself you have following options:
 - [set up your own asciinema server instance](../manual/server/) instance, and
   [set API URL
   accordingly](https://github.com/asciinema/asciinema-server/blob/master/docs/INSTALL.md#using-asciinema-recorder-with-your-instance).
-  
+
 ## How can I delete a recording from asciinema.org?
 
 In order to be able to delete a recording you first need to associate it with an

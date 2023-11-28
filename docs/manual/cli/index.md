@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # asciinema CLI
 
 __asciinema__ (aka asciinema CLI or asciinema recorder) is a command-line tool

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Manual
 
 Welcome to the asciinema manual!

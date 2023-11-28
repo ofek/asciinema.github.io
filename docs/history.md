@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # History
 
 The asciinema project was started by [Marcin Kulik](https://hachyderm.io/@ku1ik)

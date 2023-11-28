@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Getting started
 
 This guide serves as your introduction to asciinema, starting with the basics of

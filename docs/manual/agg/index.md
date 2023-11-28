@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # agg - asciinema gif generator
 
 __agg__ is a command-line tool for generating animated GIF files from terminal

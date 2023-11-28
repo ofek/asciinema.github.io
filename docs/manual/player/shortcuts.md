@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Keyboard shortcuts
 
 The following keyboard shortcuts are available when the player element has input

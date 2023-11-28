@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # How it works
 
 Unlike traditional screen recording tools that capture video, asciinema records
