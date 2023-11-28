@@ -2,13 +2,15 @@
 
 __asciinema player__ is a web player for terminal session recordings.
 
-Unlike typical web _video_ players, which play heavy-weight video files (`.mp4`,
-`.mov`), asciinema player plays light-weight terminal session recordings in
-text-based [asciicast](../asciicast/v2/) format (`.cast`). ... produced by cli?
+Unlike typical web _video_ players, which play heavyweight video files (`.mp4`,
+`.mov`), asciinema player plays lightweight terminal session recordings in the
+text-based [asciicast](../asciicast/v2/) format (`.cast`), such as those
+produced by [asciinema recorder](../cli/).
 
 <div class="player" id="player-manual-player-intro"></div>
 
-The player is built from the ground up with JavaScript and Rust (WASM), and is
+The player is built from the ground up with JavaScript and
+[Rust](https://www.rust-lang.org/) ([WASM](https://webassembly.org/)), and is
 available as [npm package](https://www.npmjs.com/package/asciinema-player) and a
 [standalone JS
 bundle](https://github.com/asciinema/asciinema-player/releases/latest).
