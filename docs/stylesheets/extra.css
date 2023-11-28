@@ -44,3 +44,7 @@ a.bitcoin-logo img {
   width: 32px;
   vertical-align: middle;
 }
+
+main div.md-main__inner {
+  margin-bottom: 1.5rem;
+}
