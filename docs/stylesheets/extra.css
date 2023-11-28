@@ -1,3 +1,8 @@
+:root {
+  --md-text-font: 'Fira Sans', sans-serif;
+  --md-code-font: 'Fira Mono', monospace;
+}
+
 article .player {
   margin: 2em 0;
 }
