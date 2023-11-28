@@ -19,6 +19,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  font: false
   features:
     - navigation.tabs
     - navigation.instant
@@ -106,6 +107,7 @@ markdown_extensions:
 extra_css:
   - stylesheets/player-3.6.3.css
   - stylesheets/extra.css
+  - stylesheets/fira.css
 
 extra_javascript:
   - javascripts/player-3.6.3.min.js
