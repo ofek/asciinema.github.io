@@ -1,11 +1,13 @@
 ---
 hide:
+  - navigation
   - toc
 ---
 
 <style>
 .md-typeset h1 {
-  display: none;
+  position: absolute;
+  left: -10000px;
 }
 
 pre.ascii-logo {
