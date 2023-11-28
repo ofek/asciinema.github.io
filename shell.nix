@@ -5,4 +5,7 @@ pkgs.mkShell {
     python311Packages.mkdocs-material
     python311Packages.mkdocs-material-extensions
   ];
+  shellHook = ''
+    alias serve='mkdocs serve';
+  '';
 }
