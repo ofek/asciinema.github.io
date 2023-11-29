@@ -160,7 +160,7 @@ setup details.
 
 ## Self-hosting the server
 
-While [asciinema.org](https://asciinema.org) is a default [asciinema
+While [asciinema.org](https://asciinema.org) is the default [asciinema
 server](manual/server/index.md) instance used by the CLI for uploads, you can
 self-host your own instance if you need full ownership and control over the
 recordings.
