@@ -19,6 +19,10 @@ _[as-kee-nuh-muh]_.
 The word "asciinema" is a combination of English "ASCII" and Ancient Greek
 "κίνημα" (kínēma, "movement").
 
+## What kind of sorcery is this?
+
+It's not a sorcery. Read about it on the [How it works](how-it-works.md) page.
+
 ## Do I have to upload my recordings to asciinema.org?
 
 No.
