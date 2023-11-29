@@ -5,8 +5,9 @@ hide:
 
 # Frequently Asked Questions (FAQ)
 
-Here you can find answers to most frequently asked questions about asciinema. If
-you don't find an answer to your question join our Matrix room
+Here you can find answers to most frequently asked questions about asciinema.
+
+If you don't find an answer to your question join our Matrix room
 `#asciinema:matrix.org` ([web
 client](https://matrix.to/#/#asciinema:matrix.org)) or `#asciinema` IRC channel
 on [Libera.Chat](https://libera.chat/) ([web
