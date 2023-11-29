@@ -188,13 +188,16 @@ function createPlayer(src, containerId, opts, setup) {
   const container = document.getElementById(containerId);
 
   if (container !== null) {
-    const player = AsciinemaPlayer.create(src, container, {
-      theme: 'dracula',
-      ...opts
-    });
+    document.fonts.load("1em Fira Mono").then(() => {
+      const player = AsciinemaPlayer.create(src, container, {
+        theme: 'dracula',
+        terminalFontFamily: "'Fira Mono', monospace",
+        ...opts
+      });
 
-    if (typeof setup === 'function') {
-      setup(player);
-    }
+      if (typeof setup === 'function') {
+        setup(player);
+      }
+    });
   }
 }
