@@ -126,8 +126,8 @@ asciinema CLI 2.0 introduced ability to record key presses with `asciinema rec
 --stdin` option. When this option is used then all typed in characters are
 captured as [stdin (i)
 events](manual/asciicast/v2.md#i-input-data-read-from-a-terminal) in the
-resulting asciicast file. This __includes all passwords typed in from a
-keyboard__, even if "echo mode" is turned off. When replaying, these chars are
+resulting asciicast file. This _includes all passwords typed in from a
+keyboard_, even if "echo mode" is turned off. When replaying, these chars are
 not displayed as output, but they could be used with [asciinema
 player](manual/player/index.md) to implement [custom event handler for input
 events](manual/player/api.md#input-event).
