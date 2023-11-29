@@ -1,7 +1,7 @@
 # Installation
 
 asciinema CLI is available in most package repositories on Linux, macOS, and
-FreeBSD. Search for a package named `asciinema`. 
+FreeBSD. Search for a package named `asciinema`.
 
 You can also install the [PyPI](#pypi) package, use a [container
 image](#container-image), or [run from source](#from-source).

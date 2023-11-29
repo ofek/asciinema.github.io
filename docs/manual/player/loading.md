@@ -150,7 +150,7 @@ structure produced by HTTP API.
 !!! note
 
     You can fetch the recording first and only then initialize the player with
-    `{ data: '...' }`, like this: 
+    `{ data: '...' }`, like this:
 
     ```javascript
     fetch('/demo.cast').then(resp => {
@@ -161,10 +161,10 @@ structure produced by HTTP API.
     However this has a downside: the player is not added to the page until the
     data is loaded, resulting in the player poping up on the page out of nowhere
     a moment after the page load.
-    
+
     By using `{ data: () => ... }` (function variant) you can mount the player
     on the page immediately.
-    
+
 ## Playing other recording formats
 
 By default, recordings are parsed with a built-in

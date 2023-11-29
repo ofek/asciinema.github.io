@@ -53,12 +53,12 @@ document$.subscribe(function() {
       const url = '../../../assets/Cherry_MX_Brown.wav';
       const context = new AudioContext();
       let clickbuffer;
-      
+
       fetch(url)
         .then(response => response.arrayBuffer())
         .then(data => context.decodeAudioData(data))
         .then(buf => { clickBuffer = buf });
-      
+
       function playKeypressSound(e) {
         const source = context.createBufferSource();  // create a sound source
         source.buffer = clickBuffer;                  // tell the source which sound to play
@@ -70,7 +70,7 @@ document$.subscribe(function() {
         source.start(0);
       }
 
-      player.addEventListener('input', playKeypressSound); 
+      player.addEventListener('input', playKeypressSound);
     }
   );
 

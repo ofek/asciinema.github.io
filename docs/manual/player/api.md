@@ -247,12 +247,12 @@ Below is the result. Make sure your audio is not on mute.
     and they must be passed in `create`'s first argument, together with a URL.
     `inputOffset` is an option of the [recording
     driver](https://github.com/asciinema/asciinema-player/tree/develop/src/driver).
-    
+
     Concept of drivers is not fully finalized yet and is subject to change. Feel
     free to check the source code of currently available drivers for what
     options are available. Be warned though: drivers other than the default
     recording one are experimental and may change in the future.
-    
+
 ### `marker` event
 
 `marker` event is dispatched for every [marker](markers.md) encountered during
