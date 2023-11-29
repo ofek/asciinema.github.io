@@ -34,10 +34,10 @@ asciinema is free and open-source software (FOSS) created by [Marcin
 Kulik](https://hachyderm.io/@ku1ik). The source code is available at
 [github.com/asciinema](https://github.com/asciinema).
 
-To learn more about the project itself, read through the [About](history.md)
-section. It explains [how asciinema works](how-it-works.md), how to engage with
-[the community](community.md), what [integrations](integrations.md) people have
-built around the project, and last but not least, how to [support the
+To learn more about the project itself, read through the About section. It
+explains [how asciinema works](how-it-works.md), how to engage with [the
+community](community.md), what [integrations](integrations.md) people have built
+around the project, and last but not least, how to [support the
 project](donations.md).
 
 To get up to speed with asciinema follow the [getting started
