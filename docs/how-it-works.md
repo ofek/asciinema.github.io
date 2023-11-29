@@ -21,10 +21,10 @@ and invisible escape/control sequences, in their raw, unfiltered form.
 Additionally, the use of PTY lets asciinema capture terminal window resize
 events, and when enabled, also keyboard input.
 
-The recordings are saved in [asciicast](../manual/asciicast/v2/) format,
-designed for simplicity and interoperability. Every detail of the terminal
-session is encoded as a sequence of time-stamped events, preserving not only the
-content but also the rhythm and flow of the session.
+The recordings are saved in [asciicast](manual/asciicast/v2.md) format, designed
+for simplicity and interoperability. Every detail of the terminal session is
+encoded as a sequence of time-stamped events, preserving not only the content
+but also the rhythm and flow of the session.
 
 Replaying a recorded session involves more than just displaying text; it
 requires interpreting a complex series of ANSI escape code sequences to
@@ -35,9 +35,9 @@ the heavy lifting.
 
 However, playback in a web browser is another story. To do that we need
 something that can interpret ANSI sequences and produce visual representation of
-a terminal window. Therefore, [asciinema player](../manual/player/) is powered
-by a bespoke terminal emulator, [avt](https://github.com/asciinema/avt), based
-on [Paul Williams' parser for ANSI-compatible video
+a terminal window. Therefore, [asciinema player](manual/player/index.md) is
+powered by a bespoke terminal emulator, [avt](https://github.com/asciinema/avt),
+based on [Paul Williams' parser for ANSI-compatible video
 terminals](https://vt100.net/emu/dec_ansi_parser). This emulator is specifically
 tailored to replicate the display aspect of terminal emulation, handling color
 changes, cursor movements, and accurate placement of text on the screen. It

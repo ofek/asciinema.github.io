@@ -48,8 +48,7 @@ However, if you record with:
 ```asciinema rec demo.cast```
 
 then the recording is saved to a local file in
-[asciicast](../asciicast/)
-format.
+[asciicast](manual/asciicast/v2.md) format.
 
 You can now replay it directly in your terminal with:
 
@@ -69,16 +68,16 @@ You can view the recording there and share it via secret (default) or public URL
 
 If you'd rather host it yourself you have following options:
 
-- [use standalone asciinema player](../manual/player/) on your website, or
-- [set up your own asciinema server instance](../manual/server/) instance, and
-  [set API URL
+- [use standalone asciinema player](manual/player/index.md) on your website, or
+- [set up your own asciinema server instance](manual/server/index.md) instance,
+  and [set API URL
   accordingly](https://github.com/asciinema/asciinema-server/blob/master/docs/INSTALL.md#using-asciinema-recorder-with-your-instance).
 
 ## How can I delete a recording from asciinema.org?
 
 In order to be able to delete a recording you first need to associate it with an
 asciinema.org user account. You can do that by using [asciinema
-auth](../manual/cli/usage/#asciinema-auth) command. Once you complete this step
+auth](manual/cli/usage.md#asciinema-auth) command. Once you complete this step
 look for a dropdown with a gear icon on recording page (it's below the player,
 on the right side).
 
@@ -101,7 +100,7 @@ are automatically deleted 7 days after they were uploaded.
 
 Yes, but not (yet) in a way you would expect :)
 
-[asciicasts](../manual/asciicast/) are quite simple newline-delimited JSON
+[asciicasts](manual/asciicast/v2.md) are quite simple newline-delimited JSON
 files. You can edit them easily with any text editor which supports UTF-8. The
 recorded data is more or less a series of print statements, with [ansi escape
 sequences](https://en.wikipedia.org/wiki/ANSI_escape_code) (also known as
@@ -126,12 +125,12 @@ before you record it.
 asciinema CLI 2.0 introduced ability to record key presses with `asciinema rec
 --stdin` option. When this option is used then all typed in characters are
 captured as [stdin (i)
-events](../manual/asciicast/v2/#i-input-data-read-from-a-terminal) in the
+events](manual/asciicast/v2.md#i-input-data-read-from-a-terminal) in the
 resulting asciicast file. This __includes all passwords typed in from a
 keyboard__, even if "echo mode" is turned off. When replaying, these chars are
 not displayed as output, but they could be used with [asciinema
-player](../manual/player/) to implement [custom event handler for input
-events](../manual/player/api/#input-event).
+player](manual/player/index.md) to implement [custom event handler for input
+events](manual/player/api.md#input-event).
 
 `--stdin` basically does keylogging that is scoped to a _single_ shell instance
 / terminal tab. Given its sensitive nature it's disabled by default and has to
@@ -168,7 +167,7 @@ command = /bin/bash -l
 
 ## How can I change my asciinema.org profile avatar?
 
-asciinema.org (any [asciinema server](../manual/server/) in general) uses
+asciinema.org (any [asciinema server](manual/server/index.md) in general) uses
 gravatar.com for profile avatars. The avatars are based on account email
 address.
 

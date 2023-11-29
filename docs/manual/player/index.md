@@ -9,8 +9,8 @@ __asciinema player__ is a web player for terminal session recordings.
 
 Unlike typical web _video_ players, which play heavyweight video files (`.mp4`,
 `.mov`), asciinema player plays lightweight terminal session recordings in the
-text-based [asciicast](../asciicast/v2/) format (`.cast`), such as those
-produced by [asciinema recorder](../cli/).
+text-based [asciicast](../asciicast/v2.md) format (`.cast`), such as those
+produced by [asciinema recorder](../cli/index.md).
 
 <div class="player" id="player-manual-player-intro"></div>
 
@@ -29,7 +29,7 @@ It's as easy as adding a single line of Javascript code to your web page:
 AsciinemaPlayer.create('demo.cast', document.getElementById('demo'));
 ```
 
-Check out the [quick start guide](quick-start/) for basic setup overview.
+Check out the [quick start guide](quick-start.md) for basic setup overview.
 
 ---
 
@@ -37,24 +37,24 @@ Notable features:
 
 * ability to copy-paste terminal content - it's just text after all!
 * smooth, timing-accurate playback,
-* [idle time optimization](options/#idletimelimit) to skip periods of
+* [idle time optimization](options.md#idletimelimit) to skip periods of
   inactivity,
-* [posters](options/#poster),
-* [markers](markers/) for navigation or auto-pause,
-* configurable [font families](options/#terminalfontfamily) and [line
-  height](options/#terminallineheight),
-* [automatic terminal scaling](options/#fit) to fit into container element in
+* [posters](options.md#poster),
+* [markers](markers.md) for navigation or auto-pause,
+* configurable [font families](options.md#terminalfontfamily) and [line
+  height](options.md#terminallineheight),
+* [automatic terminal scaling](options.md#fit) to fit into container element in
   most efficient way,
 * full-screen mode,
-* [multiple color themes for standard 16 colors](options/#theme) + support for
+* [multiple color themes for standard 16 colors](options.md#theme) + support for
   256 color palette and 24-bit true color (ISO-8613-3),
-* [adjustable playback speed](options/#speed),
-* [looped playback](options/#loop), infinite or finite,
-* [starting playback at specific time](options/#startat),
-* [API for programmatic control](api/),
-* [keyboard shortcuts](shortcuts/),
+* [adjustable playback speed](options.md#speed),
+* [looped playback](options.md#loop), infinite or finite,
+* [starting playback at specific time](options.md#startat),
+* [API for programmatic control](api.md),
+* [keyboard shortcuts](shortcuts.md),
 * [support for other recording
-  formats](loading/#playing-other-recording-formats) like ttyrec, typescript.
+  formats](loading.md#playing-other-recording-formats) like ttyrec, typescript.
 
 ---
 

@@ -4,7 +4,7 @@ This guide shows how to use asciinema CLI for recording, replaying and
 publishing terminal sessions.
 
 For a broader overview of what's possible with asciinema check out the
-[introductory guide](../../../getting-started/).
+[introductory guide](../../getting-started.md).
 
 ## Install asciinema CLI
 
@@ -37,12 +37,13 @@ FreeBSD. Search for a package named `asciinema`.
 
 === "Other"
 
-    Check the [Installation](../installation/) section for all installation options.
+    Check the [Installation](installation.md) section for all installation
+    options.
 
 ## Record a terminal session
 
 To start a recording session use the [rec
-command](../usage/#asciinema-rec-filename):
+command](usage.md#asciinema-rec-filename):
 
 ```sh
 asciinema rec first.cast
@@ -62,7 +63,7 @@ The recording ends when you exit `htop` by pressing its `q` shortcut.
 ## Replay directly in a terminal
 
 To replay a recording in your terminal use [play
-command](../usage/#asciinema-play-filename):
+command](usage.md#asciinema-play-filename):
 
 ```sh
 asciinema play first.cast
@@ -94,14 +95,14 @@ asciinema upload first.cast
 ```
 
 The above command uploads it to [asciinema.org](https://asciinema.org), which is
-a default [asciinema server](../../server/) instance, and prints a secret link
-you can use to watch your recording in a web browser.
+a default [asciinema server](../server/index.md) instance, and prints a secret
+link you can use to watch your recording in a web browser.
 
 !!! note
 
     This step is completely optional. You can embed your recordings on a web
-    page with [asciinema player](../../player/), or publish them to a
-    self-hosted [asciinema server](../../server/) instance.
+    page with [asciinema player](../player/index.md), or publish them to a
+    self-hosted [asciinema server](../server/index.md) instance.
 
 ## Record and publish in one command
 
@@ -130,12 +131,12 @@ asciinema: recording finished
 
 ## Next
 
-These are the basics, but there's much more. See the [Usage](../usage/) section
+These are the basics, but there's much more. See the [Usage](usage.md) section
 for detailed information on each command of the CLI.
 
 If you're interested in sharing your recordings via asciinema.org please
 familiarize yourself with docs on [asciinema
-upload](../usage/#asciinema-upload-filename) and [asciinema
-auth](../usage/#asciinema-auth) commands.
+upload](usage.md#asciinema-upload-filename) and [asciinema
+auth](usage.md#asciinema-auth) commands.
 
 Happy recording!

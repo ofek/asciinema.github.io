@@ -3,8 +3,9 @@
 During a recording session there are several situations where asciinema CLI
 needs to display a user notification. Typical scenarios include:
 
-- recording is suspended/resumed with <kbd>ctrl+\</kbd> [shortcut](../shortcuts/),
-- [marker](../markers/) is added, with a user-defined shortcut,
+- recording is suspended/resumed with <kbd>ctrl+\</kbd>
+  [shortcut](shortcuts.md),
+- [marker](markers.md) is added, with a user-defined shortcut,
 - file write error happens.
 
 The notification must happen without printing anything to a terminal, therefore
@@ -17,9 +18,9 @@ the state of the terminal. This works out of the box on Linux (via
     Technically the recorder could show a notification inside a terminal by just
     printing a message but this can potentially mess up the output/expectations
     of a program currently running in the foreground, e.g. a shell, vim etc.
-    
+
 You can disable desktop notifications with the `notifications.enabled` option in
-the [config file](../configuration/):
+the [config file](configuration.md):
 
 ```ini title="~/.config/asciinema/config"
 [notifications]

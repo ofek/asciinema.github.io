@@ -8,7 +8,7 @@ Your support:
 
 - allows asciinema lead developer, [Marcin Kulik](https://hachyderm.io/@ku1ik),
   to spend more time on implementing requested features, fixing bugs and helping
-  [the community](../community/),
+  [the community](community.md),
 - covers maintenance costs of running asciinema's main hosting site,
   [asciinema.org](https://asciinema.org), such as servers, domains, DNS, backup
   storage space, etc, keeping it free for everyone,
@@ -66,6 +66,6 @@ class="email">donations@asci<b>inema.org</b>inema.org</span>.
 ## Consulting
 
 Another way of supporting the project is to use [consulting
-services](../consulting/) offered by [asciinema's lead
+services](consulting.md) offered by [asciinema's lead
 developer](https://hachyderm.io/@ku1ik). If asciinema doesn't support your
 use-case and you wish it did, consider this option. It's a win-win!

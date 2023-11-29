@@ -11,8 +11,8 @@ monospace"`.
 
 You can use any custom monospace font with the player by adding `@font-face`
 definitions in CSS and calling `AsciinemaPlayer.create` with
-[terminalFontFamily](../options/#terminalfontfamily) option. Regular font face
-is necessary, bold (weight 700) is recommended, italic is optional (italics are
+[terminalFontFamily](options.md#terminalfontfamily) option. Regular font face is
+necessary, bold (weight 700) is recommended, italic is optional (italics are
 rarely used in terminal).
 
 If you use [icons](https://fontawesome.com/) or

@@ -18,14 +18,14 @@ listening for [`marker` event](#marker-event), and they can also be used for
 
 There two ways of specifying markers for use in the player:
 
-- using [`markers` option](../options/#markers),
-- embedding markers in the recording - see [Markers](../../cli/markers/) in the
+- using [`markers` option](options.md#markers),
+- embedding markers in the recording - see [Markers](../cli/markers.md) in the
   CLI section for details.
 
 ## Setting markers
 
 The easiest way of setting markers is by using [`markers`
-option](../options/#markers).
+option](options.md#markers).
 
 Example of setting _unlabeled_ markers:
 
@@ -49,11 +49,11 @@ AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
 ```
 
 If you keep your recordings on [asciinema.org](https://asciinema.org) or you
-[self-host the server](../../server/self-hosting/) you can set markers on
+[self-host the server](../server/self-hosting/index.md) you can set markers on
 recording settings page.
 
 Another way of defining markers is by embedding them directly in a recording.
-Note the lines with [`m` code](../../asciicast/v2/#m-marker) - those are marker
+Note the lines with [`m` code](../asciicast/v2.md#m-marker) - those are marker
 definitions:
 
 ``` json title="example.cast"
@@ -71,7 +71,7 @@ definitions:
 [17.389425, "o", "..."]
 ```
 
-asciinema recorder can be [configured](../../cli/configuration/) to have a
+asciinema recorder can be [configured](../cli/configuration.md) to have a
 keyboard shortcut for adding markers during the recording session. If you have
 an existing recording you can edit the file with your favourite editor and
 insert marker lines as shown in the above example.
@@ -86,16 +86,16 @@ marker.
 
 <div class="player" id="player-manual-player-markers-breakpoints"></div>
 
-This behaviour can be enabled with [pauseOnMarkers](../options/#pauseonmarkers)
+This behaviour can be enabled with [pauseOnMarkers](options.md#pauseonmarkers)
 option.
 
 ## `marker` event
 
 When the player encounters a marker during the playback it dispatches a
-[`marker` event](../api/#marker-event).
+[`marker` event](api.md#marker-event).
 
 You can use it to react to a marker any way you want. Here we manually implement
-breakpoints by pausing the player using its [API](../api/):
+breakpoints by pausing the player using its [API](api.md):
 
 ```javascript
 player.addEventListener('marker', _marker => {
@@ -105,7 +105,7 @@ player.addEventListener('marker', _marker => {
 
 ## Seeking to a marker
 
-Markers can also be used as a [seek](../api/#seeklocation) target. 
+Markers can also be used as a [seek](api.md#seeklocation) target.
 
 You can seek to next, previous or a specific marker:
 
@@ -121,8 +121,8 @@ player.seek({ marker: 'prev' });
 ```
 
 The following example shows how to implement looping over a section of a
-recording by combining [`marker` event](../api/#marker-event) with [`seek`
-method](../api/#seeklocation):
+recording by combining [`marker` event](api.md#marker-event) with [`seek`
+method](api.md#seeklocation):
 
 ```javascript
 player.addEventListener('marker', ({ index, time, label }) => {

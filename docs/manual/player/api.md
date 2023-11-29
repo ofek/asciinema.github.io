@@ -6,7 +6,7 @@ function for adding the player to a page.
 The player object, returned by `create` function, provides several methods that
 can be used to control the player or obtain information about its state.
 
-Check [Installation](../quick-start/#installation) section for instructions on
+Check [Installation](quick-start.md#installation) section for instructions on
 making the module available to your code.
 
 ## Mounting in DOM
@@ -24,7 +24,7 @@ The arguments are:
 - `opts` - configuration options (optional)
 
 For example, to mount the player inside `demo` element and use
-[idleTimeLimit](../options/#idletimelimit) option do this:
+[idleTimeLimit](options.md#idletimelimit) option do this:
 
 ```javascript
 AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
@@ -32,10 +32,10 @@ AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
 });
 ```
 
-See [Loading a recording](../loading/) learn about various ways of getting a
+See [Loading a recording](loading.md) learn about various ways of getting a
 recording into the player.
 
-See [Options](../options/) for a complete list of available options.
+See [Options](options.md) for a complete list of available options.
 
 ## Control & inspection
 
@@ -73,7 +73,7 @@ player.getDuration(); // => 123.45
 ### `play()`
 
 Initiates playback of the recording. If the recording hasn't been
-[preloaded](../options/#preload) then it's loaded, and playback is started.
+[preloaded](options.md#preload) then it's loaded, and playback is started.
 
 ```javascript
 player.play();
@@ -112,7 +112,7 @@ Changes the playback location to specified time or marker.
 
 - time in seconds, as number, e.g. `15`
 - position in percentage, as string, e.g `'50%'`
-- specific [marker](../markers/) by its 0-based index, as `{ marker: i }` object, e.g. `{ marker: 3 }`
+- specific [marker](markers.md) by its 0-based index, as `{ marker: i }` object, e.g. `{ marker: 3 }`
 - previous marker, as `{ marker: 'prev' }` object,
 - next marker, as `{ marker: 'next' }` object.
 
@@ -156,7 +156,7 @@ player.addEventListener('play', () => {
 !!! info
 
     There's subtle difference between the `play` event and the `playing` event
-    (below). If the recording is not [preloaded](../options/#preload) (default
+    (below). If the recording is not [preloaded](options.md#preload) (default
     behaviour) then `play` is trigerred when the player _initiates_ the playback
     and starts fetching the recording. In other words, `play` signals the intent
     of playback. `playing` signals the actual start.
@@ -201,7 +201,7 @@ Callback's 1st argument is an object with `data` field, which contains
 registered input value. Usually this is ASCII character representing a key, but
 may be a control character, like `"\r"` (enter), `"\u0001"` (ctrl-a), `"\u0003"`
 (ctrl-c), etc. See [input event in asciicast file
-format](../../asciicast/v2/#supported-event-codes) for more information.
+format](../asciicast/v2.md#supported-event-codes) for more information.
 
 ```javascript
 player.addEventListener('input', ({ data }) => {
@@ -255,7 +255,7 @@ Below is the result. Make sure your audio is not on mute.
     
 ### `marker` event
 
-`marker` event is dispatched for every [marker](../markers/) encountered during
+`marker` event is dispatched for every [marker](markers.md) encountered during
 playback.
 
 Callback's 1st argument is an object with `index`, `time` and `label` fields,
@@ -270,4 +270,4 @@ player.addEventListener('marker', ({ index, time, label }) => {
 This event can be used for orchestrating arbitrary, timed actions on your page
 outside of the player, as well as for fine-grained playback control, e.g.
 [implementing looping over a section of a
-recording](../markers/#seeking-to-a-marker).
+recording](markers.md#seeking-to-a-marker).

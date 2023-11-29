@@ -15,17 +15,18 @@ I work with enterprises, startups and individuals.
 
 Non-exhaustive list of services for asciinema:
 
-- integration of [asciinema player](../manual/player/) in your website,
-- building customized version of [asciinema player](../manual/player/) to suit
-  your needs,
-- integration of [asciinema recorder](../manual/cli/) in your software solutions,
-- installation and adaptation of [asciinema server](../manual/server/) to your
-  infrastructure (on-premise, in the cloud),
-- long term support for [asciinema server](../manual/server/) (upgrades),
+- integration of [asciinema player](manual/player/index.md) in your website,
+- building customized version of [asciinema player](manual/player/index.md) to
+  suit your needs,
+- integration of [asciinema recorder](manual/cli/index.md) in your software
+  solutions,
+- installation and adaptation of [asciinema server](manual/server/index.md) to
+  your infrastructure (on-premise, in the cloud),
+- long term support for [asciinema server](manual/server/index.md) (upgrades),
 - embedding of [asciinema virtual terminal](https://github.com/asciinema/avt) in
   your software,
-- adapting [asciinema gif generator](../manual/agg/) for a different input or
-  output format.
+- adapting [asciinema gif generator](manual/agg/index.md) for a different input
+  or output format.
 
 With 20 years of professional experience I also help with topics beyond
 asciinema, e.g:
@@ -51,7 +52,8 @@ A selection of work completed for my clients:
 - full text search: automatic scanning of recorded sessions for undesired
   content like use of certain command-line tools or accidental exposure of
   secrets.
-- playback of [custom recording formats](../manual/player/parsers/): extending asciinema player to allow replaying textual or binary log files.
+- playback of [custom recording formats](manual/player/parsers.md): extending
+  asciinema player to allow replaying textual or binary log files.
 - SSO for asciinema server: implementing Single Sign-On to ensure secure and convenient access to your
   asciinema server instance. SAML, Google Workspace, Azure AD, Auth0, and more.
 - CI/CD integration: embedding asciinema recorder in your CI/CD pipeline to make

@@ -34,20 +34,21 @@ asciinema is free and open-source software (FOSS) created by [Marcin
 Kulik](https://hachyderm.io/@ku1ik). The source code is available at
 [github.com/asciinema](https://github.com/asciinema).
 
-To learn more about the project itself, read through this section. It explains
-[how asciinema works](../how-it-works/), how to engage with [the
-community](../community/), what [integrations](../integrations/) people have
+To learn more about the project itself, read through the [About](history.md)
+section. It explains [how asciinema works](how-it-works.md), how to engage with
+[the community](community.md), what [integrations](integrations.md) people have
 built around the project, and last but not least, how to [support the
-project](../donations/).
+project](donations.md).
 
 To get up to speed with asciinema follow the [getting started
-guide](../getting-started/). It's a short, hands-on tutorial, which demonstrates
+guide](getting-started.md). It's a short, hands-on tutorial, which demonstrates
 what's possible, and leaves you with a good high-level overview of the tool.
 
-To get deeper navigate to the [manual](../manual/), which covers installation,
-configuration and usage of each asciinema component ([CLI](../manual/cli/),
-[player](../manual/player/), [server](../manual/server/)). It also includes the
-specification of the [file format](../manual/asciicast/v2/) used by asciinema.
+To get deeper navigate to the [manual](manual/index.md), which covers
+installation, configuration and usage of each asciinema component
+([CLI](manual/cli/index.md), [player](manual/player/index.md),
+[server](manual/server/index.md)). It also includes the specification of the
+[file format](manual/asciicast/v2.md) used by asciinema.
 
 If you're looking for something specific you can use the search bar at the top
 of the page.

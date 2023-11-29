@@ -1,28 +1,28 @@
 # Keyboard shortcuts
 
 There are several key bindings used by the CLI during recording and playback.
-Most of them can be customized in the [config file](../configuration/).
+Most of them can be customized in the [config file](configuration.md).
 
 ## Recording shortcuts
 
 The following keyboard shortcuts are available when recording with [`asciinema
-rec`](../usage/#asciinema-rec-filename):
+rec`](usage.md#asciinema-rec-filename):
 
 shortcut | action | config file option | notes
 ---------|--------|---------------|------
 <kbd>ctrl+\</kbd> | toggle the capture of a terminal | `rec.pause_key` | similar to "mute" on an audio call
 <kbd>ctrl+d</kbd> | end the recording session | - | this is handled by a shell
-- | add a [marker](../markers/) | `rec.add_marker_key` | no default shortcut for this
+- | add a [marker](markers.md) | `rec.add_marker_key` | no default shortcut for this
 
 ## Playback shortcuts
 
 The following keyboard shortcuts are available when replaying with [`asciinema
-play`](../usage/#asciinema-play-filename):
+play`](usage.md#asciinema-play-filename):
 
 shortcut | action | config file option | notes
 ---------|--------|---------------|------
 <kbd>space</kbd> | toggle the playback | `play.pause_key` | pauses / resumes
-<kbd>]</kbd> | jump to next [marker](../markers/) | `play.next_marker_key` | 
+<kbd>]</kbd> | jump to next [marker](markers.md) | `play.next_marker_key` |
 <kbd>.</kbd> | step (when paused) | `play.step_key` | steps through a recording<br>a frame at a time
 <kbd>ctrl+c</kbd> | stop | - | ends the playback
 

@@ -17,18 +17,18 @@ You can temporarily pause the capture of your terminal by pressing
 <kbd>ctrl+\</kbd>. This is useful when you want to execute a series of commands
 that must not be captured (e.g. pasting secrets). It's an equivalent of the
 "mute" functionality in an audio call. Resume the capture by pressing
-<kbd>ctrl+\</kbd> again. This shortcut (and [other shortcuts](../shortcuts/))
-can be customized in the [config file](../configuration/).  Capture state
-changes are signaled via [desktop notifications](../desktop-notifications/).
+<kbd>ctrl+\</kbd> again. This shortcut (and [other shortcuts](shortcuts.md)) can
+be customized in the [config file](configuration.md). Capture state changes are
+signaled via [desktop notifications](desktop-notifications.md).
 
 Recording session ends when you exit the shell, which can be done either by
 pressing <kbd>ctrl+d</kbd> or entering `exit`. If a custom command is recorded
 (`-c`) then the recording session ends when the command finishes.
 
 If the `filename` argument is given the recording is saved to a file in
-[asciicast](../../asciicast/v2/) format. It can later be replayed with
-`asciinema play <filename>`, and uploaded to
-[asciinema.org](https://asciinema.org) with `asciinema upload <filename>`.
+[asciicast](../asciicast/v2.md) format. It can later be replayed with `asciinema
+play <filename>`, and uploaded to [asciinema.org](https://asciinema.org) with
+`asciinema upload <filename>`.
 
 If the `filename` argument is omitted the complete recording is saved to a
 temporary file. asciinema then shows a prompt, which lets you decide whether to
@@ -56,8 +56,8 @@ Available options:
 - `-q, --quiet` - Be quiet - suppress all notices/warnings (implies -y)
 
 Input recording (`--stdin`) captures all characters typed in by a user. This can
-be used with [asciinema player](../../player/) to implement [custom event
-handler for input events](../../player/api/#input-event).
+be used with [asciinema player](../player/index.md) to implement [custom event
+handler for input events](../player/api.md#input-event).
 
 !!! warning
 
@@ -67,7 +67,7 @@ handler for input events](../../player/api/#input-event).
     to be explicitly enabled via `--stdin` option if desired.
 
     Also, check [this FAQ
-    answer](../../../faq/#does-asciinema-record-the-passwords-i-type-during-recording-sessions)
+    answer](../../faq.md#does-asciinema-record-the-passwords-i-type-during-recording-sessions)
     for more information on the topic.
 
 !!! tip
@@ -116,7 +116,7 @@ cat /path/to/asciicast.cast | asciinema play -
 ssh user@host cat asciicast.cast | asciinema play -
 ```
 
-There are several [keyboard shortcuts](../shortcuts/#playback-shortcuts)
+There are several [keyboard shortcuts](shortcuts.md#playback-shortcuts)
 available during playback. The most important ones are:
 
 - <kbd>ctrl+c</kbd> - end the playback early,
@@ -127,7 +127,7 @@ Available options:
 - `-i, --idle-time-limit=<sec>` - Limit replayed terminal inactivity to max `<sec>` seconds
 - `-s, --speed=<factor>` - Playback speed (can be fractional)
 - `-l, --loop` - Play in a loop
-- `-m, --pause-on-markers` - Automatically pause on [markers](../../player/markers/)
+- `-m, --pause-on-markers` - Automatically pause on [markers](../player/markers.md)
 
 !!! note
 
@@ -169,13 +169,13 @@ asciinema cat one.cast two.cast three.cast
 ## `asciinema upload <filename>`
 
 **Upload a recording to [asciinema.org](https://asciinema.org) or a [self-hosted
-asciinema server](../../server/self-hosting/).**
+asciinema server](../server/self-hosting/index.md).**
 
 This command uploads a terminal session recorded with `rec` to [asciinema
-server](../../server/) instance, where it can be viewed and shared with a wider
-audience. Default upload target is [asciinema.org](https://asciinema.org), but
-it can be easily changed to [point to another server
-instance](../configuration/#asciinema_api_url).
+server](../server/index.md) instance, where it can be viewed and shared with a
+wider audience. Default upload target is [asciinema.org](https://asciinema.org),
+but it can be easily changed to [point to another server
+instance](configuration.md#asciinema_api_url).
 
 It's likely that you would want to manage this and other uploaded recordings at
 some point, e.g. set a title or change terminal color theme. See [asciinema

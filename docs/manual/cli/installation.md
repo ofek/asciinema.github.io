@@ -170,7 +170,7 @@ Pull the container:
 
 Container's entrypoint is set to `asciinema` binary therefore you can run the
 container with arguments you would normally pass to `asciinema` command (see
-[Usage](../usage/) for commands and options).
+[Usage](usage.md) for commands and options).
 
 When running the container it's essential to allocate a pseudo-TTY (`-t`) and
 keep STDIN open (`-i`).
@@ -206,8 +206,8 @@ You can optionally bind-mount config directory (`-v`):
     If you plan to upload your recordings to
     [asciinema.org](https://asciinema.org) then it's recommended to preserve
     asciinema config directory between runs, e.g. by bind-mounting it as shown
-    above. This directory stores [Install ID](/broken), which links all
-    recordings uploaded from a given system to your asciinema.org user account.
+    above. This directory stores install ID, which links all recordings uploaded
+    from a given system to your asciinema.org user account.
 
 To be able to save the recordings locally bind-mount your working directory like this:
 

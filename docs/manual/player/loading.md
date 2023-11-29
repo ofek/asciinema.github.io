@@ -10,7 +10,7 @@ By default the player doesn't fetch a recording upon initialization, postponing
 the loading until user starts the playback. Given how small (in terms of
 filesize) terminal recordings are this usually is perfectly fine. However, if
 you wish so you can force the player to preload the recording upon its
-initialization using [preload option](../../options/#preload):
+initialization using [preload option](options.md#preload):
 
 ```javascript
 AsciinemaPlayer.create(src, containerElement, { preload: true });
@@ -70,9 +70,9 @@ AsciinemaPlayer.create({ data: data }, containerElement);
 
 The value of `data` can be:
 
-- a string containing asciicast in [v2](../../asciicast/v2/) or [v1](../../asciicast/v1/) format
-- an array representing asciicast in [v2](../../asciicast/v2/) format
-- an object representing asciicast in [v1](../../asciicast/v1/) format
+- a string containing asciicast in [v2](../asciicast/v2.md) or [v1](../asciicast/v1.md) format
+- an array representing asciicast in [v2](../asciicast/v2.md) format
+- an object representing asciicast in [v1](../asciicast/v1.md) format
 - a function which returns one of the above (may be async)
 
 Provided `data` is parsed with built-in asciicast format parser by default (also
@@ -122,8 +122,8 @@ Similarly to [inlining with Data URL](#inlining-with-data-url) this is useful
 for server-side generation use-cases.
 
 If `data` is a function, then the player invokes it when playback is started by
-a user. If [preload](../options/#preload) option is used, the function is
-invoked during player initialization (mounting in DOM).
+a user. If [preload](options.md#preload) option is used, the function is invoked
+during player initialization (mounting in DOM).
 
 Say you'd like to embed asciicast contents in a (hidden) HTML tag on your page,
 following data source can be used to extract it and pass it to the player:
@@ -168,12 +168,12 @@ structure produced by HTTP API.
 ## Playing other recording formats
 
 By default, recordings are parsed with a built-in
-[asciicast](../../asciicast/v2/) format parser.
+[asciicast](../asciicast/v2.md) format parser.
 
 If you have a recording produced by other terminal session recording tool (e.g.
 script, termrec, ttyrec) you can use one of [built-in file format
-parsers](../parsers/#built-in-parsers), or [implement a custom parser
-function](../parsers/#custom-parser).
+parsers](parsers.md#built-in-parsers), or [implement a custom parser
+function](parsers.md#custom-parsers).
 
 Recording format parser can be specified in the source argument to
 `AsciinemaPlayer.create` as a string (built-in) or a function (custom):
@@ -182,5 +182,5 @@ Recording format parser can be specified in the source argument to
 AsciinemaPlayer.create({ url: url, parser: parser }, containerElement);
 ```
 
-See [Parsers](../parsers/) for information on available built-in parsers and how
+See [Parsers](parsers.md) for information on available built-in parsers and how
 to implement a custom one.

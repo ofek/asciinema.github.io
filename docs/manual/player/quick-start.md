@@ -2,13 +2,13 @@
 
 This guide shows how to add asciinema player to your own website.
 
-It assumes you have obtained terminal session recording file by either
-recording a terminal with [asciinema CLI](../../cli/) (`asciinema rec demo.cast`), or
+It assumes you have obtained terminal session recording file by either recording
+a terminal with [asciinema CLI](../cli/index.md) (`asciinema rec demo.cast`), or
 downloading a `.cast ` file from [asciinema.org](https://asciinema.org) or a
-  [self-hosted asciinema server](../../server/self-hosting/).
+[self-hosted asciinema server](../server/self-hosting/index.md).
 
 For a broader overview of what's possible with asciinema check out the
-[introductory guide](../../../getting-started/).
+[introductory guide](../../getting-started.md).
 
 ## Installation
 
@@ -91,14 +91,14 @@ The arguments are:
 - `opts` - configuration options (optional).
 
 In the most common case, `src` is a URL pointing to an
-[asciicast](../../asciicast/v2/) file. You can pass it as a full URL, e.g.
+[asciicast](../asciicast/v2.md) file. You can pass it as a full URL, e.g.
 `"https://example.com/demo.cast"`, an absolute path, e.g. `"/demo.cast"`, or a
 relative path, e.g. `"../casts/demo.cast"`.
 
 !!! note
 
-    A recording can be loaded from other sources, e.g. by inlining it in HTML
-    or providing it through a function. See [Loading a recording](../loading/) for
+    A recording can be loaded from other sources, e.g. by inlining it in HTML or
+    providing it through a function. See [Loading a recording](loading.md) for
     available ways of getting a recording into the player.
 
 The third argument, `opts`, can be used to configure player's look and feel.
@@ -112,7 +112,7 @@ AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
 });
 ```
 
-See [Options](../options/) for a complete list of available options.
+See [Options](options.md) for a complete list of available options.
 
 Finally, if you'd like to control the player programmatically, you can use the
 methods of the player object, which is returned from the `create` function:
@@ -126,11 +126,11 @@ document.getElementById('my-play-button').addEventListener('click', e => {
 });
 ```
 
-See [API](../api/) for full overview of programmatic control.
+See [API](api.md) for full overview of programmatic control.
 
 Before we conclude this guide here's an example of a player with a
-[poster](../options/#poster) and a couple of [markers](../markers/),
-additionally controlled with external buttons.
+[poster](options.md#poster) and a couple of [markers](markers.md), additionally
+controlled with external buttons.
 
 ```javascript
 const player = AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {

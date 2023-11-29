@@ -12,13 +12,14 @@ While Marcin had been playing with the idea of sharing terminal session
 recordings on the web since 2010, the working prototype of what eventually
 became asciinema came to life a bit later.
 
-Initially, all components of asciinema - [the recorder](../manual/cli/) (aka
-CLI), [the player](../manual/player/), and [the server](../manual/server/) -
-were developed as parts of a single [Ruby on Rails](https://rubyonrails.org/)
-codebase. The recorder was a simple, single-file Python program. The player was
-a single JavaScript file with an ad-hoc, incomplete parser for ANSI escape
-sequences, using jQuery to juggle the lines of a fake terminal view in a web
-browser. It was rough but worked well enough to deserve continued development.
+Initially, all components of asciinema - [the recorder](manual/cli/index.md)
+(aka CLI), [the player](manual/player/index.md), and [the
+server](manual/server/index.md) - were developed as parts of a single [Ruby on
+Rails](https://rubyonrails.org/) codebase. The recorder was a simple,
+single-file Python program. The player was a single JavaScript file with an
+ad-hoc, incomplete parser for ANSI escape sequences, using jQuery to juggle the
+lines of a fake terminal view in a web browser. It was rough but worked well
+enough to deserve continued development.
 
 The project was initially named "ascii.io". In March 2012, the ascii.io site was
 launched, providing free hosting for terminal session recordings made with the
@@ -34,7 +35,7 @@ first release of the new codebase was 0.9.9, published in December 2014.
 The same year, version 1.0 of the player came out, quickly followed by version
 1.0 of the recorder, which was released in March 2015. These releases stabilized
 the first version of asciinema's recording file format, [asciicast
-v1](../manual/asciicast/v1/).
+v1](manual/asciicast/v1.md).
 
 Version 1.2 of the recorder was the final version implemented in Go. For
 [several
@@ -57,7 +58,7 @@ made more self-hosting-friendly, with updated installation docs and a simplified
 setup in containerized environments.
 
 February 2018 marked the release of asciinema recorder 2.0, which introduced an
-improved recording file format, [asciicast v2](../manual/asciicast/v2/), among
+improved recording file format, [asciicast v2](manual/asciicast/v2.md), among
 many new features.
 
 Another milestone was achieved in May 2022 with the release of asciinema player
@@ -68,8 +69,8 @@ Another milestone was achieved in May 2022 with the release of asciinema player
 faster](https://blog.asciinema.org/post/smaller-faster/) player.
 
 Outside of asciinema's core components, a new, ultra-fast asciinema GIF
-generator, [agg](../manual/agg/), was released in August 2022. The creation of
-agg was, to a degree, sparked by [avt](https://github.com/asciinema/avt). In
+generator, [agg](manual/agg/index.md), was released in August 2022. The creation
+of agg was, to a degree, sparked by [avt](https://github.com/asciinema/avt). In
 fact, avt has also been integrated into the asciinema server, where it's used
 for thumbnail generation and recording analysis since 2020.
 

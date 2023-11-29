@@ -93,13 +93,14 @@ idle_time_limit = 2
 
 ### `ASCIINEMA_API_URL`
 
-Specifies base URL of an [asciinema server](../server/), used for recording uploads.
+Specifies base URL of an [asciinema server](../server/index.md), used for recording uploads.
 
 Defaults to `https://asciinema.org`. Can also be set in the config file as
 `api.url`.
 
-If you [self-host asciinema server](../../server/self-hosting/) then you should set
-`ASCIINEMA_API_URL` to its base URL, e.g. `https://asciinema.example.com`.
+If you [self-host asciinema server](../server/self-hosting/index.md) then you
+should set `ASCIINEMA_API_URL` to its base URL, e.g.
+`https://asciinema.example.com`.
 
 ### `ASCIINEMA_CONFIG_HOME`
 

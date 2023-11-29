@@ -58,7 +58,7 @@ Defaults to `false` - no preload.
 
 !!! tip
 
-    Check [Loading a recording](../loading/) for available options of getting a
+    Check [Loading a recording](loading.md) for available options of getting a
     recording into the player in the most suitable way.
     
 ### `loop`
@@ -196,7 +196,7 @@ Defaults to `"width"`.
 !!! note
 
     Version 2.x of the player supported only the behaviour of the `false` value.
-    If you're [upgrading from v2 to v3](../upgrading/) and want to preserve the
+    If you're [upgrading from v2 to v3](upgrading.md and want to preserve the
     old sizing behaviour then include `fit: false` option.
     
 ### `controls`
@@ -241,10 +241,10 @@ AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
 ```
 
 Markers set with this option override all [markers embedded in asciicast
-files](../../asciicast/v2/#m-marker). If this option is not set the player
+files](../asciicast/v2.md#m-marker). If this option is not set the player
 defaults to markers found in the recording file (if any).
 
-[Markers overview](../markers/) provides more information on using markers.
+[Markers overview](markers.md) provides more information on using markers.
 
 ### `pauseOnMarkers`
 
@@ -293,7 +293,7 @@ Use any valid CSS `font-family` value, e.g `"'JetBrains Mono', Consolas, Menlo, 
 
     If you want to use [web
     fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts),
-    see the [Fonts](../fonts/) section for information on the best way to load
+    see the [Fonts](fonts.md) section for information on the best way to load
     them to ensure the player initializes properly.
     
 ### `terminalLineHeight`

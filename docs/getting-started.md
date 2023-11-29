@@ -6,10 +6,10 @@ hide:
 # Getting started
 
 This guide serves as your introduction to asciinema, starting with the basics of
-recording a terminal with [the asciinema CLI](../manual/cli/). We'll cover how
-to share recordings via [asciinema.org](https://asciinema.org), embed [the
-player](../manual/player/) on a website, and conclude with instructions for
-self-hosting [the server](../manual/server).
+recording a terminal with [the asciinema CLI](manual/cli/index.md). We'll cover
+how to share recordings via [asciinema.org](https://asciinema.org), embed [the
+player](manual/player/index.md) on a website, and conclude with instructions for
+self-hosting [the server](manual/server/index.md).
 
 ## Recording
 
@@ -42,7 +42,8 @@ choose from:
 
 === "Other"
 
-    Check the [Installation](../manual/cli/installation/) section for all installation options.
+    Check the [Installation](manual/cli/installation.md) section for all
+    installation options.
 
 Now record your terminal with:
 
@@ -52,7 +53,7 @@ asciinema rec first.cast
 
 This starts a new recording session, where everything printed to a terminal gets
 captured and saved to the `first.cast` file in
-[asciicast](../manual/asciicast/v2/) format.
+[asciicast](manual/asciicast/v2.md) format.
 
 To end the recording session simply exit the shell. This can be done by pressing
 <kbd>ctrl-d</kbd> or entering <code>exit</code>.
@@ -66,7 +67,7 @@ asciinema play first.cast
 You can pause/resume by pressing <kbd>space</kbd>, or end the playback early by
 pressing <kbd>ctrl+c</kbd>.
 
-See [asciinema CLI quick-start guide](../manual/cli/quick-start/) for more
+See [asciinema CLI quick-start guide](manual/cli/quick-start.md) for more
 examples.
 
 ## Sharing
@@ -76,7 +77,7 @@ with the wider audience on the internet.
 
 You can host your recordings at [asciinema.org](https://asciinema.org), which is
 a hosting platform for terminal recordings powered by [asciinema
-server](../manual/server/). _Hosting your recordings on asciinema.org is
+server](manual/server/index.md). _Hosting your recordings on asciinema.org is
 completely optional_ but has many benefits, e.g. easy sharing and embedding.
 
 Upload your recording to asciinema.org with:
@@ -89,10 +90,10 @@ The command prints a secret link to the recording page, where you can view it.
 Feel free to share the link with anyone.
 
 The player component on the recording page is not a typical video player. It's
-[asciinema player](../manual/player/), built from the ground up to play terminal
-sessions. It lets you copy the contents of its terminal view, just like in a
-regular terminal. Try it: pause the playback, select some lines, copy, paste
-elsewhere. It's just text after all!
+[asciinema player](manual/player/index.md), built from the ground up to play
+terminal sessions. It lets you copy the contents of its terminal view, just like
+in a regular terminal. Try it: pause the playback, select some lines, copy,
+paste elsewhere. It's just text after all!
 
 If you'd like to manage your recordings on asciinema.org (set a title, change
 terminal color theme) you need to link your uploads to your asciinema.org user
@@ -107,14 +108,13 @@ the CLI with your asciinema.org account, ensuring you access to your uploads.
 
 You can skip this step now, and do it later. However, all recordings not
 assigned to an account are automatically deleted after 7 days. See docs for
-[asciinema upload](../manual/cli/usage/#asciinema-upload-filename) and
-[asciinema auth](../manual/cli/usage/#asciinema-auth) commands for detailed
-information.
+[asciinema upload](manual/cli/usage.md#asciinema-upload-filename) and [asciinema
+auth](manual/cli/usage.md#asciinema-auth) commands for detailed information.
 
 ## Embedding
 
-[asciinema player](../manual/player/) can be embedded on any website by using
-HTML `<script>` tag. Embedded player is commonly used on blogs, in project
+[asciinema player](manual/player/index.md) can be embedded on any website by
+using HTML `<script>` tag. Embedded player is commonly used on blogs, in project
 documentation, and in conference talk slides.
 
 All recordings uploaded to asciinema.org can be embedded on a website by using a
@@ -155,13 +155,13 @@ the standalone player on your website like this:
 </html>
 ```
 
-See [asciinema player quick-start guide](../manual/player/quick-start/) for full
+See [asciinema player quick-start guide](manual/player/quick-start.md) for full
 setup details.
 
 ## Self-hosting the server
 
 While [asciinema.org](https://asciinema.org) is a default [asciinema
-server](../manual/server) instance used by the CLI for uploads, you can
+server](manual/server/index.md) instance used by the CLI for uploads, you can
 self-host your own instance if you need full ownership and control over the
 recordings.
 
@@ -206,21 +206,22 @@ asciinema upload private.cast
 ```
 
 Note that the above configuration should be used only for testing the server
-locally.  See full [server self-hosting guide](../manual/server/self-hosting/)
-to learn how to set it up properly in a full-featured and secure way.
+locally.  See full [server self-hosting
+guide](manual/server/self-hosting/index.md) to learn how to set it up properly
+in a full-featured and secure way.
 
 ## Generating a GIF
 
 On websites where `<script>` tags are not allowed but `<img>` tags are, you can
 use animated GIF files for embedding your demos.
 
-Use [agg](../manual/agg/) to create a GIF file from your recording:
+Use [agg](manual/agg/index.md) to create a GIF file from your recording:
 
 ```sh
 agg first.cast first.gif
 ```
 
-See [agg usage manual](../manual/agg/usage/) for GIF generation details.
+See [agg usage manual](manual/agg/usage.md) for GIF generation details.
 
 Using asciinema player to present a recording is usually a better choice than a
 GIF file if you have the option of using `<script>` tags. Contrary to GIF, the
@@ -233,7 +234,7 @@ Thank you for taking the first steps with asciinema through this introductory
 guide. Our goal was to provide you with a clear, high-level overview of the
 asciinema tools and their usage.
 
-For additional insights and answers, feel free to explore our [FAQ](../faq/)
+For additional insights and answers, feel free to explore our [FAQ](faq.md)
 section and join the conversation in the `#asciinema` room on the Matrix
 network, `#asciinema:matrix.org` ([web
 client](https://matrix.to/#/#asciinema:matrix.org)), or `#asciinema` IRC channel
