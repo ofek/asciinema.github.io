@@ -8,6 +8,7 @@ hide:
 .md-typeset h1 {
   position: absolute;
   left: -10000px;
+  opacity: 0;
 }
 
 pre.ascii-logo {
