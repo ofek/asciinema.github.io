@@ -63,6 +63,11 @@ operational costs of running [asciinema.org](https://asciinema.org).
 For custom sponsorship deals reach out via <span
 class="email">donations@asci<b>inema.org</b>inema.org</span>.
 
+Shout-out to asciinema's current sponsors:
+
+- [**Dashcam**](https://dashcam.io?utm_source=asciinemagithub)
+- [Brightbox](https://www.brightbox.com/)
+
 ## Consulting
 
 Another way of supporting the project is to use [consulting
