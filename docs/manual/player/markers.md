@@ -110,14 +110,14 @@ Markers can also be used as a [seek](api.md#seeklocation) target.
 You can seek to next, previous or a specific marker:
 
 ```javascript
-// seek to a marker with index 2
-player.seek({ marker: 2 });
-
 // seek to next marker
 player.seek({ marker: 'next' });
 
 // seek to previous marker
 player.seek({ marker: 'prev' });
+
+// seek to a marker with index 2
+player.seek({ marker: 2 });
 ```
 
 The following example shows how to implement looping over a section of a
@@ -133,6 +133,8 @@ player.addEventListener('marker', ({ index, time, label }) => {
   }
 })
 ```
+
+Here's the result:
 
 <div class="player" id="player-manual-player-markers-seeking"></div>
 
