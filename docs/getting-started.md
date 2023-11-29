@@ -48,11 +48,11 @@ choose from:
 Now record your terminal with:
 
 ```sh
-asciinema rec first.cast
+asciinema rec demo.cast
 ```
 
 This starts a new recording session, where everything printed to a terminal gets
-captured and saved to the `first.cast` file in
+captured and saved to the `demo.cast` file in
 [asciicast](manual/asciicast/v2.md) format.
 
 To end the recording session simply exit the shell. This can be done by pressing
@@ -61,7 +61,7 @@ To end the recording session simply exit the shell. This can be done by pressing
 Replay your recording with:
 
 ```sh
-asciinema play first.cast
+asciinema play demo.cast
 ```
 
 You can pause/resume by pressing <kbd>space</kbd>, or end the playback early by
@@ -83,7 +83,7 @@ completely optional_ but has many benefits, e.g. easy sharing and embedding.
 Upload your recording to asciinema.org with:
 
 ```sh
-asciinema upload first.cast
+asciinema upload demo.cast
 ```
 
 The command prints a secret link to the recording page, where you can view it.
@@ -201,8 +201,8 @@ variable:
 ```sh
 export ASCIINEMA_API_URL=http://localhost:4000
 
-asciinema rec private.cast
-asciinema upload private.cast
+asciinema rec demo.cast
+asciinema upload demo.cast
 ```
 
 Note that the above configuration should be used only for testing the server
@@ -218,7 +218,7 @@ use animated GIF files for embedding your demos.
 Use [agg](manual/agg/index.md) to create a GIF file from your recording:
 
 ```sh
-agg first.cast first.gif
+agg demo.cast first.gif
 ```
 
 See [agg usage manual](manual/agg/usage.md) for GIF generation details.

@@ -46,7 +46,7 @@ To start a recording session use the [rec
 command](usage.md#asciinema-rec-filename):
 
 ```sh
-asciinema rec first.cast
+asciinema rec demo.cast
 ```
 
 When done, press <kbd>ctrl+d</kbd> or enter `exit` to end the recording.
@@ -55,7 +55,7 @@ Instead of recording a shell you can record any command with `--command` / `-c`
 option:
 
 ```sh
-asciinema rec -c htop first.cast
+asciinema rec -c htop demo.cast
 ```
 
 The recording ends when you exit `htop` by pressing its `q` shortcut.
@@ -66,20 +66,20 @@ To replay a recording in your terminal use [play
 command](usage.md#asciinema-play-filename):
 
 ```sh
-asciinema play first.cast
+asciinema play demo.cast
 ```
 
 To replay it with double speed use `--speed` / `-s` option:
 
 ```sh
-asciinema play -s 2 first.cast
+asciinema play -s 2 demo.cast
 ```
 
 A unique feature of asciinema is the ability to optimize away idle moments in a
 recording using the `--idle-time-limit` / `-i` option:
 
 ```sh
-asciinema play -i 2 first.cast
+asciinema play -i 2 demo.cast
 ```
 
 You can pass `-i 2` to `asciinema rec` as well, to set it permanently on a
@@ -91,7 +91,7 @@ watch. Try it!
 If you want to watch and share it on the web, upload it:
 
 ```sh
-asciinema upload first.cast
+asciinema upload demo.cast
 ```
 
 The above command uploads it to [asciinema.org](https://asciinema.org), which is
