@@ -60,7 +60,7 @@ Defaults to `false` - no preload.
 
     Check [Loading a recording](loading.md) for available options of getting a
     recording into the player in the most suitable way.
-    
+
 ### `loop`
 
 Type: boolean or number
@@ -113,7 +113,7 @@ Defaults to:
     This option makes the playback more pleasant for viewers therefore it's
     recommended to use in most cases. It's often better to use `idleTimeLimit`
     than `speed`. You can use both together too!
-    
+
 ### `theme`
 
 Type: string
@@ -161,7 +161,7 @@ AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
 
     Using NPT-based poster preloads the recording on player's initialization
     regardless of [preload](#preload) option value.
-    
+
 Alternatively, a `poster` value of `data:text/plain,This will be printed as
 poster\n\rThis in second line` will display arbitrary text. All [ANSI escape
 codes](https://en.wikipedia.org/wiki/ANSI_escape_code) can be used to add color
@@ -198,7 +198,7 @@ Defaults to `"width"`.
     Version 2.x of the player supported only the behaviour of the `false` value.
     If you're [upgrading from v2 to v3](upgrading.md and want to preserve the
     old sizing behaviour then include `fit: false` option.
-    
+
 ### `controls`
 
 Type: boolean or "auto"
@@ -295,7 +295,7 @@ Use any valid CSS `font-family` value, e.g `"'JetBrains Mono', Consolas, Menlo, 
     fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts),
     see the [Fonts](fonts.md) section for information on the best way to load
     them to ensure the player initializes properly.
-    
+
 ### `terminalLineHeight`
 
 Type: number
