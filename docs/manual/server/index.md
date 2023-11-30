@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # asciinema server
 
 __asciinema server__ is a server-side component of the asciinema ecosystem.
