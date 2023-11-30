@@ -73,8 +73,6 @@ nav:
       - manual/player/upgrading.md
     - Server:
       - manual/server/index.md
-      - manual/server/user-account.md
-      - manual/server/recording-settings.md
       - manual/server/sharing.md
       - manual/server/embedding.md
       - Self-hosting:
