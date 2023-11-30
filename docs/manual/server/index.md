@@ -20,8 +20,8 @@ as preview generation and recording analysis.
 
 [asciinema.org](https://asciinema.org) is a public asciinema server instance
 managed by the asciinema team, offering free hosting for terminal recordings,
-available to everyone. Read [About asciinema.org](dot-org.md) to learn more
-about this instance.
+available to everyone. Check [asciinema.org/about](https://asciinema.org/about)
+to learn more about this instance.
 
 asciinema server is self-hosting friendly, and can be deployed in any
 containerized environment, both for public or internal/private use. If you're
