@@ -43,7 +43,7 @@ Same recommendation as for `cols` applies here.
 
 Type: boolean
 
-Set this option to `true` if playback should start automatically.
+Set this option to `true` if the playback should start automatically.
 
 Defaults to `false` - no auto play.
 
@@ -75,7 +75,7 @@ Defaults to `false` - no looping.
 
 Type: number or string
 
-Start playback at a given time.
+Start the playback at a given time.
 
 Supported formats:
 
