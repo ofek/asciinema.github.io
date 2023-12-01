@@ -12,10 +12,9 @@ button on the recording page. Anyone you give a link to can view the recording.
 ## Customizing a link
 
 When a recording link is opened, the look and feel of the player defaults to the
-settings used by the author on the recording settings page.
-
-Many of those can be overriden on a per-link basis by appending additional query
-parameters (`?...`) to the link.
+settings used by the author on the recording settings page. Many of those can be
+overriden on a per-link basis by appending additional query parameters (`?...`)
+to the link.
 
 For example, below link makes the player start at 25 second mark (`t=25`), play
 at 2x speed (`speed=2`), and use Nord terminal theme (`theme=nord`):
@@ -24,7 +23,8 @@ at 2x speed (`speed=2`), and use Nord terminal theme (`theme=nord`):
 https://asciinema.org/a/P1TkxghJg83gKt4rFV8wCKH4f?t=25&speed=2&theme=nord
 ```
 
-All available parameters are listed below.
+The list of available parameters, along with their descriptions, is provided
+below:
 
 ### startAt
 
