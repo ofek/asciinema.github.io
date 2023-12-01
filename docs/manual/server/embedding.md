@@ -1,134 +1,144 @@
-# Recording embedding
+# Embedding
 
-You can easily embed an asciicast on any HTML page. If you want to put a
-recording in a blog post, a project's documentation or in a conference talk's
-slides, you can do it by copy-pasting one of the embed scripts.
+Recordings hosted on an [asciinema server](../server/index.md) instance, such as
+[asciinema.org](https://asciinema.org), can be easily embedded on any website
+either as an inline player or as a link containing a preview image of the
+recording.
 
-## Embedding image link
+This allows you to enrich a blog post or project documentation with minimal
+effort.
 
-Embedding as an image link is useful in places where scripts are not allowed,
-e.g. in a project's README file.
+When embedding with the methods presented below, all the assets are served from
+asciinema.org. This server has been operational since 2012 and hopefully isn't
+going anywhere (you can help by [donating](../../donations.md)). However, if you
+prefer not to depend on a third party, consider including the [standalone
+player](../player/index.md) on your website or [self-hosting the
+server](../server/self-hosting/index.md).
 
-You can get the embed snippets for a specific asciicast by clicking on "Share"
-link on asciicast page.
+## Inline player
 
-This is how they look for asciicast 14:
+You can embed a player for your recording in a page by inserting a
+recording-specific `<script>` tag, which serves the player and the recording
+from asciinema.org. Check the alternative [Preview image
+link](#preview-image-link) option if a website doesn't permit inserting
+`<script>` tags.
 
-HTML:
+To get the inline player snippet for a recording click on the "Share" button on
+the recording page. The snippet looks like this:
 
-    <a href="https://asciinema.org/a/14"><img src="https://asciinema.org/a/14.png" width="836"/></a>
+```html
+<script src="https://asciinema.org/a/14.js" id="asciicast-14" async></script>
+```
 
-Markdown:
+The script adds the player to a page at the location of the script itself,
+allowing precise placement by simply copy-pasting the snippet.
 
-    [![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
+The script injects an `<iframe>` element into the page, into which the
+[asciinema player](../player/index.md) is loaded. The frame is automatically
+resized, using the full width of the containing element and adjusting its height
+to maintain the proportions of the recorded terminal.
 
-You can pass extra options (listed in "Customizing the playback" below) to the
-linked URL as query params. For example, to start the playback automatically
-when opening linked asciicast page append `?autoplay=1` to the asciicast URL in
-`href` attribute:
+Here's how it looks:
 
-    <a href="https://asciinema.org/a/14?autoplay=1"><img src="https://asciinema.org/a/14.png" width="836"/></a>
+<script src="https://asciinema.org/a/14.js" id="asciicast-14" async></script>
 
-## Embedding the player
+The look and feel of the inline player defaults to the settings used by the
+author on the recording settings page. Many of those can be overriden by using
+[custom data
+attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
+with the `<script>` tag.
 
-If you're embedding on your own page or on a site which permits script tags, you
-can use the full player widget.
+The following embed snippet makes the player start playback from the 25-second
+mark (`data-start-at="25"`), play at 2x speed (`data-speed="2"`), and use the
+Solarized Dark terminal theme (`data-theme="solarized-dark"`):
 
-You can get the widget script for a specific asciicast by clicking on "Embed"
-link on asciicast page.
+```html
+<script src="https://asciinema.org/a/14.js" id="asciicast-14" async data-start-at="25" data-speed="2" data-theme="solarized-dark"></script>
+```
 
-It looks like this:
+Here's how it looks with those additional options applied:
 
-    <script src="https://asciinema.org/a/14.js" id="asciicast-14" async></script>
+<script src="https://asciinema.org/a/14.js" id="asciicast-14" async data-loop="true" data-speed="2" data-theme="solarized-dark"></script>
 
-The player shows up right at the place where the script is pasted. Let's look
-at the following markup:
+The list of available options, along with their descriptions, is provided below.
+Add them as `data-<option-name>="value"` attributes on the embed `<script>` tag,
+as shown in the example above.
 
-    <p>This is some text.</p>
-    <script src="https://asciinema.org/a/14.js" id="asciicast-14" async></script>
-    <p>This is some other text.</p>
+### start-at
 
-The player is displayed between the two paragraphs, as a `div` element with
-"asciicast" class.
+Use `start-at` to start start the playback at a given time.
 
-The embed script supports all customization options (see the section below). An
-option can be specified by adding it as a
-<code>data-<em>option-name</em>="<em>value</em>"</code> attribute to the script
-tag.
+Supported formats:
 
-For example, to make the embedded player autostart playback when loaded and use
-big font, use the following script:
+* `123` (number of seconds)
+* `2:03` (mm:ss)
+* `1:02:03` (hh:mm:ss)
 
-    <script src="https://asciinema.org/a/14.js" id="asciicast-14" async data-autoplay="true" data-size="big"></script>
+Defaults to `0`.
 
-## Customizing the playback
+!!! note
 
-The player supports several options that control the behavior and look of it.
-Append them to the URL (`?speed=2&theme=tango`) or set them as data attributes
-on embed script (`data-speed="2" data-theme="tango"`).
+    When `start-at` is specified then `autoplay=1` is implied. To prevent the
+    player from starting automatically when `start-at` parameter is set you have
+    to additionally use `autoplay=0`.
 
-### **startAt** / **t**
+### autoplay
 
-The `startAt` (or `t`) option specifies the time at which the playback should
-start. The default is `startAt=0` (play from the beginning).
+Use `autoplay` to control whether the playback should start automatically upon
+a page load.
 
-Accepted formats: `ss`, `mm:ss`, `hh:mm:ss`.
+Accepted values:
 
-NOTE: when `startAt` is specified then `autoplay=1` is implied. To prevent the
-player from starting automatically when `startAt` option is set you have to
-explicitly set `autoplay=0`.
+* no value, i.e. `<script ... data-autoplay ...>` - start the playback automatically
+* `1` / `true` - start the playback automatically
+* `0` / `false` - don't start the playback automatically (default)
 
-### **autoplay**
+### loop
 
-The `autoplay` option controls whether the playback should automatically start
-when the player loads. Accepted values:
+Use `loop` to enable looped playback.
 
-* 0 / false - do not start playback automatically (default)
-* 1 / true - start playback automatically
+Accepted values:
 
-### **preload**
+* no value, i.e. `<script ... data-loop ...>` - enable looped playback
+* `1` / `true` - enable looped playback
+* `0` / `false` - disable looped playback (default)
 
-The `preload` option controls whether the player should immediately start
-fetching the recording.
+### speed
 
-* 0 / false - do not preload the recording, wait for user action
-* 1 / true - preload the recording
+Use `speed` to alter the playback speed.
 
-Defaults to 1 for asciinema.org URLs, to 0 for embed script.
+Accepts an integer or a float.
 
-### **loop**
+For example:
 
-The `loop` option allows for looping the playback. This option is usually
-combined with `autoplay` option. Accepted values:
+* `2` (2x faster)
+* `0.5` (2x slower)
 
-* 0 / false - disable looping (default)
-* 1 / true - enable looping
+Defaults to `1` - original recording speed.
 
-### **speed**
+### idle-time-limit
 
-The `speed` option alters the playback speed. The default speed is 1 which
-means it plays at the unaltered, original speed.
+Use `idle-time-limit` to optimize away idle moments in a recording.
 
-### **idleTimeLimit** / **i**
+Accepts an integer or a float, representing a maximum idle time between
+animation frames.
 
-The `idleTimeLimit` (or `i`) option allows reducing terminal inactivity periods
-to a given number of seconds.
-
-For example, when set to 2 any inactivity longer than 2 seconds will be
+For example, when set to `2` any inactivity longer than 2 seconds will be
 "compressed" to 2 seconds.
 
-When not specified it defaults to (first non-blank):
+Defaults to either:
 
-- the "Idle time limit" value set on asciicast's settings page,
-- `idle_time_limit` value from asciicast header (saved when passing `-i <sec>`
-  to `asciinema rec`),
-- no limit, when it was not specified at the time of recording.
+- "Idle time limit" setting from the recording settings page,
+- `idle_time_limit` from [asciicast header](../asciicast/v2.md#header) (saved
+  when `--idle-time-limit <sec>` is used with [`asciinema
+  rec`](../cli/usage.md#asciinema-rec-filename)),
+- no limit if none of the above is present.
 
-### **theme**
+### theme
 
-The `theme` option allows overriding a theme used for the terminal. It defaults
-to a theme set by the asciicast author (or to "asciinema" if not set by the
-author). The available themes are:
+Use `theme` to override a theme used for the player's terminal.
+
+The available themes are:
 
 * asciinema
 * dracula
@@ -138,21 +148,91 @@ author). The available themes are:
 * solarized-light
 * tango
 
-### **cols**
+Defaults to either:
 
-The `cols` option allows overriding width (in characters) of the emulated
-terminal. By default the recorded terminal's width is used.
+- "Terminal theme" from the recording settings page,
+- "asciinema" theme.
 
-### **rows**
+### poster
 
-The `rows` option allows overriding height (in lines) of the emulated terminal.
-By default the recorded terminal's height is used.
+Use `poster` to specify an alternative poster (preview frame) to display in
+player's terminal until the playback is started.
 
-## oEmbed / Open Graph / Twitter Card
+Currently only [NPT ("Normal Play Time")
+notation](https://www.ietf.org/rfc/rfc2326.txt) is supported.
 
-asciinema supports [oEmbed](https://oembed.com/), [Open Graph](http://ogp.me/)
-and [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started) APIs. When you share
-an asciicast on Twitter, Slack, Facebook, Google+ or any other site which
-supports one of these APIs, the asciicast is presented in a rich form (usually
-with a title, author, description and a thumbnail image), linking to your
-recording on asciinema.org.
+For example, `poster=npt:1:23` will display a preview frame at 1 min 23 sec.
+
+Defaults to either:
+
+- "Thumbnail frame" from the recording settings page,
+- 50% of the recording duration.
+
+### cols
+
+Use `cols` to override player's terminal width, i.e number of columns.
+
+Defaults to either:
+
+- "Terminal columns" from the recording settings page,
+- columns saved in the recording file.
+
+!!! warning
+
+    Setting `cols` to a value smaller then the one from the original recording
+    may break the rendering of sessions including "full screen" programs like
+    `vim`, `htop` or `less`. It's usually safe to override `cols` for recordings
+    containing basic command execution in a shell.
+
+### rows
+
+Use `rows` to override player's terminal height, i.e number of rows.
+
+Defaults to either:
+
+- "Terminal rows" from the recording settings page,
+- rows saved in the recording file.
+
+!!! warning
+
+    The same caveat applies as with the `cols` option above.
+
+### preload
+
+Use `preload` to control whether the player should start fetching the recording
+immediately upon a page load, before a viewer starts the playback.
+
+* `0` / `false` - don't preload the recording (default)
+* `1` / `true` - preload the recording
+
+!!! note
+
+    When `poster` is specified then `preload=1` is implied. That's because the
+    player needs to load the recording in order to generate a preview frame.
+
+## Preview image link
+
+Embedding as an image link is useful in places where `<script>` tags are not
+allowed, such as in a project's README file rendered by Github.
+
+To get the preview link snippet for a recording click on the "Share" button on
+the recording page. The snippet looks like this:
+
+=== "HTML"
+
+    ```html
+    <a href="https://asciinema.org/a/14" target="_blank"><img src="https://asciinema.org/a/14.svg" /></a>
+    ```
+
+=== "Markdown"
+
+    ```markdown
+    [![asciicast](https://asciinema.org/a/14.svg)](https://asciinema.org/a/14)
+    ```
+
+
+Below is the result. It resembles a player with a large play button, but it
+simply links to a recording. The preview image is an SVG file, which ensures it
+looks great in all contexts and on all screen sizes.
+
+<a href="https://asciinema.org/a/14" target="_blank"><img src="https://asciinema.org/a/14.svg" /></a>
