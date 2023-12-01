@@ -13,8 +13,8 @@ alternatives below (help), or use an issue tracker (bugs)._
 
 ## Forum
 
-Join [Github Discussions](https://github.com/orgs/asciinema/discussions)
-to discuss all things related to asciinema.
+Join [asciinema discussion forum](https://discourse.asciinema.org/) to discuss
+all things related to asciinema.
 
 If you've created a cool integration, have an idea for a feature, or are seeking
 help from the community, then this is a good place to start a conversation.
