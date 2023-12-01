@@ -76,10 +76,12 @@ nav:
       - manual/server/sharing.md
       - manual/server/embedding.md
       - Self-hosting:
-        - manual/server/hosting/index.md
-        - manual/server/hosting/upgrading.md
-        - manual/server/hosting/admin.md
-        - manual/server/hosting/customization.md
+        - manual/server/self-hosting/index.md
+        - manual/server/self-hosting/installation.md
+        - manual/server/self-hosting/configuration.md
+        - manual/server/self-hosting/upgrading.md
+        - manual/server/self-hosting/admin.md
+        - manual/server/self-hosting/customization.md
     - AGG:
       - manual/agg/index.md
       - manual/agg/installation.md
