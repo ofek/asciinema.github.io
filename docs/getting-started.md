@@ -171,22 +171,32 @@ asciinema server is packaged as OCI container image and is available at
 Here's a minimal docker-compose example:
 
 ```yaml title="docker-compose.yml"
-version: '2'
-
 services:
-  asciinema-server:
-      image: ghcr.io/asciinema/asciinema-server:latest
-    # links:
-    #   - postgres
+  asciinema:
+    image: ghcr.io/asciinema/asciinema-server:latest
+    ports:
+      - '4000:4000'
     volumes:
-      - ./volumes/asciinema/uploads:/opt/app/uploads
+      - asciinema-data:/var/opt/asciinema
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   postgres:
     image: postgres:14
     volumes:
-      - ./volumes/postgres:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 2s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  asciinema-data:
+  postgres-data:
 ```
 
 Start it with:
@@ -206,7 +216,7 @@ asciinema upload demo.cast
 ```
 
 Note that the above configuration should be used only for testing the server
-locally.  See full [server self-hosting
+locally. See full [server self-hosting
 guide](manual/server/self-hosting/index.md) to learn how to set it up properly
 in a full-featured and secure way.
 
