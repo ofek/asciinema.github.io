@@ -60,7 +60,7 @@ nav:
       - manual/cli/markers.md
       - manual/cli/shortcuts.md
       - manual/cli/desktop-notifications.md
-    - Player:
+    - PLAYER:
       - manual/player/index.md
       - manual/player/quick-start.md
       - manual/player/loading.md
@@ -71,7 +71,7 @@ nav:
       - manual/player/shortcuts.md
       - manual/player/parsers.md
       - manual/player/upgrading.md
-    - Server:
+    - SERVER:
       - manual/server/index.md
       - manual/server/sharing.md
       - manual/server/embedding.md
@@ -86,7 +86,7 @@ nav:
       - manual/agg/index.md
       - manual/agg/installation.md
       - manual/agg/usage.md
-    - File format:
+    - FILE FORMAT:
       - manual/asciicast/v2.md
       - manual/asciicast/v1.md
   - FAQ: faq.md
