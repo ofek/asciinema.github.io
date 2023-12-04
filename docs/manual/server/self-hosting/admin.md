@@ -1,25 +1,29 @@
+---
+hide:
+  - toc
+---
+
 # Administration
 
-Site admin can do the following administrative tasks:
+asciinema server admins can perform the following administrative tasks:
 
-- edit, delete any recording
-- make recording a featured one
-- make recording public/private
+- edit metadata and delete any recording
+- add a recording to a "Featured" list
+- change visibility of a recording to public/private
 
-There isn't a dedicated admin UI, all of the above actions are done through the
-gear dropdown available on asciicast's view page (below the player, on the
-right).
+There's no dedicated admin section - you can perform the above tasks through the
+Settings menu (gear icon) on a recording page. The menu can be found below the
+player, on the right side of the page.
 
-### Making user an admin
+To make yourself or another user an admin, run the following command with the
+account's email address:
 
-To make user an admin, run the following command with the email address of
-existing account:
+```sh
+docker compose exec asciinema admin_add email@example.com
+```
 
-    docker compose run --rm phoenix admin_add email@example.com
+Similarly, to remove admin role from a user, run:
 
-To remove admin bit from a user, run:
-
-    docker compose run --rm phoenix admin_rm email@example.com
-
-Both above commands allow passing multiple email adresses (as separate
-arguments).
+```sh
+docker compose exec asciinema admin_rm email@example.com
+```
