@@ -183,7 +183,7 @@ services:
         condition: service_healthy
 
   postgres:
-    image: postgres:14
+    image: docker.io/library/postgres:14
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
