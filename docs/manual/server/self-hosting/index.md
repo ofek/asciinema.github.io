@@ -1,22 +1,44 @@
-# Self-hosting the server
+# Self-hosting
 
-asciinema terminal recorder uses [asciinema.org](https://asciinema.org) as its
-default host for the recordings. It's free, public service (all uploaded
-recordings are __private by default__ though).
+While [asciinema.org](https://asciinema.org) is the default [asciinema
+server](../index.md) used by the CLI for uploading recordings, you can self-host
+your own instance if you want full ownership and control over the recordings.
 
-If you're not comfortable with uploading your terminal sessions to
-asciinema.org, or your company's policy prevents you from doing that, you can
-set up your own instance for private use. See
-our [asciinema server install guide](https://github.com/asciinema/asciinema-server/wiki/Installation-guide).
+asciinema server is self-hosting friendly, and can be deployed both for public
+or internal/private use in any containerized environment using the official OCI
+image,
+[ghcr.io/asciinema/asciinema-server](https://github.com/asciinema/asciinema-server/pkgs/container/asciinema-server).
 
-Once you have your instance running, point asciinema recorder to it by setting
-API URL in `~/.config/asciinema/config` file as follows:
+Requirements:
 
-```ini
-[api]
-url = https://your.asciinema.host
+- OCI runtime, e.g. [Docker](https://www.docker.com/),
+  [Podman](https://podman.io/), [Kubernetes](https://kubernetes.io/)
+- 512 MB of RAM minimum (for a personal instance), 1 GB recommended (for a
+  community/company instance)
+- [PostgreSQL](http://www.postgresql.org/download/) 14.0+ database server
+- SMTP server, either a dedicated service or SMTP endpoint provided by your
+  email provider
+
+To get started, follow the [quick start guide](quick-start.md), which provides a
+template for a standard asciinema server configuration using
+[docker-compose](https://docs.docker.com/compose/). This configuration includes
+a PostgreSQL container and supports HTTPS, allowing you to set up a complete,
+secure asciinema server easily.
+
+Once your server is up and running, you'll be able to upload your recordings by
+pointing [asciinema CLI](../../cli/index.md) to the server using the
+`ASCIINEMA_API_URL` environment variable:
+
+```sh
+export ASCIINEMA_API_URL=https://asciinema.example.com
+asciinema upload demo.cast
 ```
 
-Alternatively, you can set `ASCIINEMA_API_URL` environment variable:
+If you need help with installation or maintenance feel free to ask on [asciinema
+forum](https://discourse.asciinema.org) or in the `#asciinema:matrix.org` room
+on the [Matrix](https://matrix.org/) network.
 
-    ASCIINEMA_API_URL=https://your.asciinema.host asciinema rec
+Last but not least, if your company is interested in having the installation,
+maintenance or customization of the server performed by the people who created
+asciinema, then check out [asciinema consulting
+services](../../../consulting.md).
