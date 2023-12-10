@@ -161,8 +161,8 @@ setup details.
 ## Self-hosting the server
 
 While [asciinema.org](https://asciinema.org) is the default [asciinema
-server](manual/server/index.md) instance used by the CLI for uploads, you can
-self-host your own instance if you want full ownership and control over the
+server](manual/server/index.md) used by the CLI for uploading recordings, you
+can self-host your own instance if you want full ownership and control over the
 recordings.
 
 asciinema server is packaged as OCI container image and is available at
