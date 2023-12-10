@@ -3,8 +3,8 @@
 This guide shows how to use asciinema CLI for recording, replaying and
 publishing terminal sessions.
 
-For a broader overview of what's possible with asciinema check out the
-[introductory guide](../../getting-started.md).
+For a broader overview of what's possible with asciinema check out the [intro
+guide](../../getting-started.md).
 
 ## Install asciinema CLI
 

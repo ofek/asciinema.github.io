@@ -7,8 +7,8 @@ a terminal with [asciinema CLI](../cli/index.md) (`asciinema rec demo.cast`), or
 downloading a `.cast ` file from [asciinema.org](https://asciinema.org) or a
 [self-hosted asciinema server](../server/self-hosting/index.md).
 
-For a broader overview of what's possible with asciinema check out the
-[introductory guide](../../getting-started.md).
+For a broader overview of what's possible with asciinema check out the [intro
+guide](../../getting-started.md).
 
 ## Installation
 
