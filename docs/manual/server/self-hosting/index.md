@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Self-hosting
 
 While [asciinema.org](https://asciinema.org) is the default [asciinema
