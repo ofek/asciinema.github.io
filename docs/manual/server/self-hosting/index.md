@@ -21,8 +21,8 @@ Requirements:
 - 512 MB of RAM minimum (for a personal instance), 1 GB recommended (for a
   community/company instance)
 - [PostgreSQL](http://www.postgresql.org/download/) 14.0+ database server
-- SMTP server, either a dedicated service or SMTP endpoint provided by your
-  email provider
+- SMTP server, either a dedicated service or an SMTP endpoint of your email
+  provider
 
 To get started, follow the [quick start guide](quick-start.md), which provides a
 template for a standard asciinema server configuration using
@@ -40,8 +40,8 @@ asciinema upload demo.cast
 ```
 
 If you need help with installation or maintenance feel free to ask on [asciinema
-forum](https://discourse.asciinema.org) or in the `#asciinema:matrix.org` room
-on the [Matrix](https://matrix.org/) network.
+forum](https://discourse.asciinema.org) or in [asciinema Matrix
+room](https://matrix.to/#/#asciinema:matrix.org).
 
 Last but not least, if your company is interested in having the installation,
 maintenance or customization of the server performed by the people who created
