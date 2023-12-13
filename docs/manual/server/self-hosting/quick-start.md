@@ -179,5 +179,5 @@ export ASCIINEMA_API_URL=https://asciinema.example.com
 asciinema upload demo.cast
 ```
 
-Check the [CLI configuration](../../cli/configuration.md) for information on how
-to set the server URL permanently via the configuration file.
+Check the [CLI configuration](../../cli/configuration.md) section for
+information on how to set the server URL permanently via the configuration file.
