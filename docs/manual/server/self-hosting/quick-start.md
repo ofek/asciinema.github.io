@@ -166,7 +166,7 @@ docker compose up
 ```
 
 You will see PostgreSQL perform its initial setup, asciinema server create its
-database tables, and Caddy attempt to obtain a TLS certificate for you domain.
+database tables, and Caddy attempt to obtain a TLS certificate for your domain.
 Visit the configured URL in your web browser to verify it's up and running.
 
 Congratulations! You have your own asciinema server instance 🎉
