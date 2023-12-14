@@ -1,14 +1,26 @@
 # Upgrading
 
-Pull latest Docker image:
+To upgrade your instance of asciinema server to the latest version:
 
-    docker pull ghcr.io/asciinema/asciinema-server:latest
+- check the [releases](https://github.com/asciinema/asciinema-server/releases)
+  for the latest version number
+- read the release notes carefully, and follow the upgrade instructions
+- update the `asciinema` container image tag to the latest number
+- recreate the stack by running `docker compose up -d`
 
-Pull latest configs from upstream and merge it into your branch:
+Release notes for each version include detailed information on the steps needed
+for a successful upgrade. Backward compatibility is always a high priority when
+cutting a new release, thus, breaking changes are more the exception than the
+rule.
 
-    git fetch origin
-    git merge origin/main
+Usually, it's a matter of updating the container image tag:
 
-Upgrade the containers:
+```diff title="docker-compose.yml"
+ services:
+   asciinema:
+-    image: ghcr.io/asciinema/asciinema-server:20231120
++    image: ghcr.io/asciinema/asciinema-server:20231214
+     # ...
+```
 
-    docker compose up -d
+Then executing `docker compose up -d`.
