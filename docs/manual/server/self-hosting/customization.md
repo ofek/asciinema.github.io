@@ -1,51 +1,63 @@
 # Customization
 
-If the variables in `.env.production` file are not enough for your needs then
-you can easily edit source code and rebuild the image.
+In cases where the regular [configuration](configuration.md) is not enough, you
+can build a custom asciinema server image. The server is built with [Elixir
+language](https://elixir-lang.org/) and [Phoenix
+framework](https://www.phoenixframework.org/). While not mainstream, this stack
+is easy to work with.
 
-Let's take max upload size as an example. We'll change it to 32MB. We need to
-edit 2 files.
+Let's take max upload size as an example. We'll change it from the default 8MB
+to more generous 32MB.
 
-Switch to a new branch (or the one you created in "Clone the repository" step
-earlier):
+## Clone the repository
 
-    git checkout -b my-company
-
-First, edit `docker/nginx/asciinema.conf` file, applying this change:
-
-```diff
--client_max_body_size 16m
-+client_max_body_size 32m
+```sh
+git clone https://github.com/asciinema/asciinema-server.git
 ```
 
-Then, edit `lib/asciinema_web/endpoint.ex` file, applying this change:
+## Create a new branch
 
-```diff
--plug Plug.Parsers,
--    parsers: [:urlencoded, :multipart, :json],
--    pass: ["*/*"],
--    json_decoder: Phoenix.json_library()
-+plug Plug.Parsers,
-+    parsers: [:urlencoded, :multipart, :json],
-+    pass: ["*/*"],
-+    json_decoder: Phoenix.json_library(),
-+    length: 32_000_000
+```sh
+git checkout main
+git switch -c custom
 ```
 
-Now, stop `phoenix` container:
+## Make the changes
 
-    docker-compose stop phoenix
+Edit `lib/asciinema_web/endpoint.ex` file, applying this change:
 
-Rebuild the image:
+```diff hl_lines="9"
+plug Plug.Parsers,
+    parsers: [:urlencoded, :multipart, :json],
+    pass: ["*/*"],
+-   json_decoder: Phoenix.json_library()
++   json_decoder: Phoenix.json_library(),
++   length: 32_000_000
+```
 
-    docker build -t ghcr.io/asciinema/asciinema-server .
+Then, commit the changes.
 
-Start new `phoenix` container:
+## Rebuild the image
 
-    docker-compose up -d phoenix
+```sh
+docker build -t ghcr.io/asciinema/asciinema-server:custom .
+```
 
-If all is good then commit your customization (so you can fetch and merge latest
-version in the future):
+## Update the image tag
 
-    git add -A .
-    git commit -m "Increased upload size limit to 32MB"
+Update the `asciinema` container image tag to `custom`:
+
+```diff title="docker-compose.yml"
+services:
+  asciinema:
+-   image: ghcr.io/asciinema/asciinema-server:20231120
++   image: ghcr.io/asciinema/asciinema-server:custom
+```
+
+## Launch the new version
+
+Finally, recreate the stack by running:
+
+```sh
+docker compose up -d
+```
