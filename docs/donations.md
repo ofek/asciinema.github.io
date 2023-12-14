@@ -65,7 +65,6 @@ class="email">donations@asci<b>inema.org</b>inema.org</span>.
 
 Shout-out to asciinema's current sponsors:
 
-- [**Dashcam**](https://dashcam.io?utm_source=asciinemagithub)
 - [Brightbox](https://www.brightbox.com/)
 
 ## Consulting
