@@ -132,9 +132,9 @@ Check [general configuration](configuration.md#general) for more information on
 
 The `SMTP_*` variables configure SMTP server used for sending short-lived login
 links. If you don't set those no mail will be sent. However, you can still
-obtain a login link from the server logs after entering your email on the login
-page. Check [email configuration](configuration.md#email) for more details,
-including configuration examples for popular SMTP providers.
+obtain a login link from the server logs after entering your email address on
+the login page. Check [email configuration](configuration.md#email) for more
+details, including configuration examples for popular SMTP providers.
 
 The server stores the uploaded recordings and other data at
 `/var/opt/asciinema`. We used volume mapping for this directory, but you can
@@ -153,7 +153,7 @@ configuration](configuration.md#database) for more information on
 `DATABASE_URL`, including the use of a separate/external PostgreSQL server.
 
 Finally, the `caddy` service runs [Caddy web server](https://caddyserver.com/)
-in a reverse proxy mode, with automatic HTTPS enabled for the domain specified
+in reverse proxy mode, with automatic HTTPS enabled for the domain specified
 with the `--from` argument (which should be the same as the `URL_HOST` on
 `asciinema` service). See [HTTPS configuration](configuration.md#https) for
 additional information.
