@@ -124,7 +124,7 @@ script snippet provided on the recording's page. It looks like this:
 <script async id="asciicast-569727" src="https://asciinema.org/a/569727.js"></script>
 ```
 
-To get it go to a recording page, click on the "Share" button and copy the
+To get it, go to a recording page, click on the "Share" button and copy the
 script from the "Embed the player" section.
 
 The above `<script>` tag is included right below this very paragraph, resulting
