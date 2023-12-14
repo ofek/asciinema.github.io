@@ -111,6 +111,6 @@ defaults to `$HOME/.config/asciinema`.
 
 !!! note
 
-    asciinema versions prior to 1.1 used `$HOME/.asciinema` as config directory.
-    If you have it there it's recommended to `mv $HOME/.asciinema
+    asciinema versions prior to 1.1 used `$HOME/.asciinema` for the config
+    directory. If you have it there, it's recommended to `mv $HOME/.asciinema
     $HOME/.config/asciinema`.
