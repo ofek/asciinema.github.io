@@ -509,7 +509,7 @@ services:
     # ...
 ```
 
-If the change you'd like to make is not possible through the configuration,
+If the changes you'd like to make are not possible through the configuration,
 check [how to customize](customization.md) the server by changing its source
 code and building a custom container image. This may require a bit of
 Elixir/Phoenix knowledge though.
