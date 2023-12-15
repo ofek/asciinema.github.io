@@ -1,7 +1,7 @@
 document$.subscribe(function() {
   // manual -> cli
 
-  createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-cli-intro', { poster: 'npt:1:17' });
+  createPlayer('../../../assets/casts/intro.cast', 'player-manual-cli-intro', { poster: 'npt:1:17' });
 
   // manual -> player
 
@@ -9,17 +9,15 @@ document$.subscribe(function() {
 
   // manual -> player -> quickstart
 
-  createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-player-quickstart-1', {
+  createPlayer('../../../assets/casts/intro.cast', 'player-manual-player-quickstart-1', {
     poster: 'npt:1:17',
     loop: true,
-    theme: 'dracula',
     controls: true,
     markers: [
-      [3, 'Intro'],
-      [5, 'Foo'],
-      [9, 'Bar'],
-      [15, 'Baz'],
-      [30, 'Qux'],
+      [15.5, 'Recording'],
+      [87, 'Replaying'],
+      [156, 'Uploading to asciinema.org'],
+      [188.5, 'Closing words'],
     ]
   }, player => {
     document.getElementById('play-button').addEventListener('click', e => {
@@ -76,10 +74,15 @@ document$.subscribe(function() {
 
   // manual -> player -> markers
 
-  createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-player-markers-intro', {
-    poster: 'npt:1:17',
+  createPlayer('../../../assets/casts/intro.cast', 'player-manual-player-markers-intro', {
+    poster: 'npt:51.5',
     controls: true,
-    markers: [1, 3, 5, 7, 11, 17]
+    markers: [
+      [15.5, 'Recording'],
+      [87, 'Replaying'],
+      [156, 'Uploading to asciinema.org'],
+      [188.5, 'Closing words'],
+    ]
   });
 
   createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-player-markers-breakpoints', {
@@ -89,21 +92,24 @@ document$.subscribe(function() {
     pauseOnMarkers: true
   });
 
-  createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-player-markers-seeking', {
+  createPlayer('../../../assets/casts/intro.cast', 'player-manual-player-markers-seeking', {
     preload: true,
+    poster: 'npt:130',
+    autoPlay: false,
+    startAt: 130,
     controls: true,
-    markers: [1, 3, 5, 7, 9]
+    markers: [133, 142]
   }, player => {
     player.addEventListener('marker', ({ index, time, label }) => {
-      if (index == 3) {
-        player.seek({ marker: 2 });
+      if (index == 1) {
+        player.seek({ marker: 0 });
       }
     })
   });
 
   // manual -> player -> shortcuts
 
-  createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-player-shortcuts-1', {
+  createPlayer('../../../assets/casts/intro.cast', 'player-manual-player-shortcuts-1', {
     poster: 'npt:1:17'
   });
 

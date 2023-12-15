@@ -128,8 +128,8 @@ method](api.md#seeklocation):
 player.addEventListener('marker', ({ index, time, label }) => {
   console.log(`marker! ${index} - ${time} - ${label}`);
 
-  if (index == 3) {
-    player.seek({ marker: 2 });
+  if (index == 1) {
+    player.seek({ marker: 0 });
   }
 })
 ```
