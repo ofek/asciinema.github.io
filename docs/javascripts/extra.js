@@ -5,7 +5,7 @@ document$.subscribe(function() {
 
   // manual -> player
 
-  createPlayer('misc.cast', 'player-manual-player-intro', { poster: 'npt:20' });
+  createPlayer('../../../assets/casts/misc.cast', 'player-manual-player-intro', { poster: 'npt:20' });
 
   // manual -> player -> quickstart
 
