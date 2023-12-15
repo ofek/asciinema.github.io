@@ -85,10 +85,10 @@ document$.subscribe(function() {
     ]
   });
 
-  createPlayer('https://asciinema.org/a/335480.cast', 'player-manual-player-markers-breakpoints', {
-    poster: 'npt:1:17',
+  createPlayer('../../../assets/casts/breakpoints.cast', 'player-manual-player-markers-breakpoints', {
+    poster: 'npt:15',
     controls: true,
-    markers: [1, 3, 5, 7, 11, 17],
+    markers: [4, 8, 13],
     pauseOnMarkers: true
   });
 
