@@ -27,7 +27,7 @@ To get the inline player snippet for a recording click on the "Share" button on
 the recording page. The snippet looks like this:
 
 ```html
-<script src="https://asciinema.org/a/14.js" id="asciicast-14" async></script>
+<script src="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.js" id="asciicast-bJMOlPe5F4mFLY0Rl6fiJSOp3" async></script>
 ```
 
 The script adds the player to a page at the location of the script itself,
@@ -40,7 +40,7 @@ to maintain the proportions of the recorded terminal.
 
 Here's how it looks:
 
-<script src="https://asciinema.org/a/14.js" id="asciicast-14" async></script>
+<script src="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.js" id="asciicast-bJMOlPe5F4mFLY0Rl6fiJSOp3" async></script>
 
 The look and feel of the inline player defaults to the settings used by the
 author on the recording settings page. Many of those can be overriden by using
@@ -53,12 +53,12 @@ mark (`data-start-at="25"`), play at 2x speed (`data-speed="2"`), and use the
 Solarized Dark terminal theme (`data-theme="solarized-dark"`):
 
 ```html
-<script src="https://asciinema.org/a/14.js" id="asciicast-14" async data-start-at="25" data-speed="2" data-theme="solarized-dark"></script>
+<script src="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.js" id="asciicast-bJMOlPe5F4mFLY0Rl6fiJSOp3" async data-start-at="25" data-speed="2" data-theme="solarized-dark"></script>
 ```
 
 Here's how it looks with those additional options applied:
 
-<script src="https://asciinema.org/a/14.js" id="asciicast-14" async data-loop="true" data-speed="2" data-theme="solarized-dark"></script>
+<script src="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.js" id="asciicast-bJMOlPe5F4mFLY0Rl6fiJSOp3" async data-loop="true" data-speed="2" data-theme="solarized-dark"></script>
 
 The list of available options, along with their descriptions, is provided below.
 Add them as `data-<option-name>="value"` attributes on the embed `<script>` tag,
@@ -221,13 +221,13 @@ the recording page. The snippet looks like this:
 === "HTML"
 
     ```html
-    <a href="https://asciinema.org/a/14" target="_blank"><img src="https://asciinema.org/a/14.svg" /></a>
+    <a href="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3" target="_blank"><img src="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.svg" /></a>
     ```
 
 === "Markdown"
 
     ```markdown
-    [![asciicast](https://asciinema.org/a/14.svg)](https://asciinema.org/a/14)
+    [![asciicast](https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.svg)](https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3)
     ```
 
 
@@ -235,4 +235,4 @@ Below is the result. It resembles a player with a large play button, but it
 simply links to a recording. The preview image is an SVG file, which ensures it
 looks great in all contexts and on all screen sizes.
 
-<a href="https://asciinema.org/a/14" target="_blank"><img src="https://asciinema.org/a/14.svg" /></a>
+<a href="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3" target="_blank"><img src="https://asciinema.org/a/bJMOlPe5F4mFLY0Rl6fiJSOp3.svg" /></a>
