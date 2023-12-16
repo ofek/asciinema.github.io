@@ -41,11 +41,11 @@ community](community.md), what [integrations](integrations.md) people have built
 around the project, and last but not least, how to [support the
 project](donations.md).
 
-To get up to speed with asciinema follow the [getting started
+To get up to speed with asciinema, follow the [getting started
 guide](getting-started.md). It's a short, hands-on tutorial, which demonstrates
 what's possible, and leaves you with a good high-level overview of the tool.
 
-To get deeper navigate to the [manual](manual/index.md), which covers
+To get deeper, navigate to the [manual](manual/index.md), which covers
 installation, configuration and usage of each asciinema component
 ([CLI](manual/cli/index.md), [player](manual/player/index.md),
 [server](manual/server/index.md)). It also includes the specification of the
