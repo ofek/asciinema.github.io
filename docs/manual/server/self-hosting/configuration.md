@@ -329,6 +329,13 @@ Here's a complete list of available SMTP settings:
 
 Below you'll find example SMTP configurations for selected providers.
 
+You can test SMTP configuration by sending a test email using the following
+command:
+
+```sh
+docker compose exec asciinema send-test-email your@email.example.com
+```
+
 ### Fastmail
 
 ```yaml title="docker-compose.yml"
