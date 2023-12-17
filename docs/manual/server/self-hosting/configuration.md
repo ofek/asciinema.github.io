@@ -107,6 +107,18 @@ A typical use-case for disabling signup is a personal server. After creating a
 user account for yourself, you can lock the server down, effectively making it a
 single-user asciinema server.
 
+### Admin contact email
+
+When setting up a public instance of asciinema server, it's advised to set
+`CONTACT_EMAIL_ADDRESS` to the email address of the person who manages the
+server, i.e. you.
+
+The contact email address is displayed on server's `/about` page, which is
+linked from the footer. Having it lets users of your asciinema server to reach
+you when facing issues.
+
+[Here](https://asciinema.org/about) is one on asciinema.org.
+
 ## Database
 
 asciinema server utilizes a PostgreSQL database for storing recording metadata
