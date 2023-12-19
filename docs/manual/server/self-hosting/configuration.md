@@ -299,6 +299,45 @@ services:
 Refer to the [R2 documentation](https://developers.cloudflare.com/r2) for
 information on obtaining the account ID and the access key.
 
+### MinIO
+
+[MinIO](https://min.io) is an open-source implementation of an S3-compatible
+object store. To use MinIO for file storage add the MinIO service to the stack,
+and set the `S3_*` environment variables accordingly:
+
+```yaml title="docker-compose.yml"
+services:
+  asciinema:
+    # ...
+    environment:
+      - S3_BUCKET=asciinema
+      - S3_ENDPOINT=http://minio:9000
+      - S3_ACCESS_KEY_ID=your-minio-access-key-id
+      - S3_SECRET_ACCESS_KEY=your-minio-secret-access-key
+      - S3_REGION=default
+    # ...
+
+  minio:
+    image: quay.io/minio/minio
+    command: server /data --console-address :9090
+    ports:
+      - '9090:9090'
+    environment:
+      - MINIO_ROOT_USER=root
+      - MINIO_ROOT_PASSWORD=hunter2!
+    volumes:
+      - minio_data:/data
+
+volumes:
+  # ...
+  minio_data:
+```
+
+You can access MinIO console at [http://localhost:9090](http://localhost:9090),
+where you can set up a bucket and generate an access key. Refer to the [MinIO
+documentation](https://min.io/docs/minio/container/index.html) for further
+instructions.
+
 ## Email
 
 asciinema server needs an SMTP server to deliver emails containing short-lived
