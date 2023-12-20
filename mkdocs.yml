@@ -95,6 +95,7 @@ nav:
       - manual/asciicast/v1.md
   - FAQ: faq.md
   - Blog: https://blog.asciinema.org
+  - Forum: https://discourse.asciinema.org
   - Code: https://github.com/asciinema
 
 markdown_extensions:
