@@ -177,7 +177,7 @@ services:
     ports:
       - '4000:4000'
     volumes:
-      - asciinema-data:/var/opt/asciinema
+      - asciinema_data:/var/opt/asciinema
     depends_on:
       postgres:
         condition: service_healthy
@@ -185,7 +185,7 @@ services:
   postgres:
     image: docker.io/library/postgres:14
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
     healthcheck:
@@ -195,8 +195,8 @@ services:
       retries: 10
 
 volumes:
-  asciinema-data:
-  postgres-data:
+  asciinema_data:
+  postgres_data:
 ```
 
 Start it with:
