@@ -400,7 +400,7 @@ services:
 
 Check [Mailgun SMTP
 docs](https://documentation.mailgun.com/en/latest/quickstart-sending.html#send-via-smtp)
-for instruction on how to obtain SMTP credentials.
+for instructions on how to obtain SMTP credentials.
 
 ### AWS SES
 
