@@ -31,11 +31,11 @@ of cool things out there (in alphabetical order):
 - [mini-asciinema-store](https://github.com/Gerifield/mini-asciinema-store) - Small server for storing asciinema recordings
 - [movee](https://github.com/rec/movee) - Script bash and Python into asciinema movies
 - [obsidian-asciinema-player](https://github.com/nekomeowww/obsidian-asciinema-player) - Obsidian plugin which supports embedding asciicast files into Markdown files
-- [wp-asciinema](https://github.com/passionsplay/wp-asciinema) - A WordPress plugin to allow for self-hosted asciicasts created with asciinema
 - [slidev-addon-asciinema](https://github.com/murilo-cunha/slidev-addon-asciinema) - Slidev addon to embed asciinema casts to presentations
 - [sphinxcontrib.asciinema](https://github.com/divi255/sphinxcontrib.asciinema) - Easily embed asciinema videos into Sphinx documentation
 - [spielbash](https://github.com/Malinskiy/spielbash) - Spielbash helps you to automate asciicasts with asciinema
 - [svg-term-cli](https://github.com/marionebl/svg-term-cli) - Share terminal sessions via SVG and CSS
+- [wp-asciinema](https://github.com/passionsplay/wp-asciinema) - A WordPress plugin to allow for self-hosted asciicasts created with asciinema
 
 To add your own project here edit [this
 file](https://github.com/asciinema/asciinema.github.io/blob/main/docs/integrations.md)
