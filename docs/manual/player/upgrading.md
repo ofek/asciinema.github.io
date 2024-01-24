@@ -60,10 +60,10 @@ Use:
 
 !!! info
 
-        There's also [asciinema-player npm
-        package](https://www.npmjs.com/package/asciinema-player), which can be
-        used instead of the standalone bundle. Check the [quick start
-        guide](quick-start.md#npm-package) for details.
+    There's also [asciinema-player npm
+    package](https://www.npmjs.com/package/asciinema-player), which can be
+    used instead of the standalone bundle. Check the [quick start
+    guide](quick-start.md#npm-package) for details.
 
 `src` attribute becomes the first argument to `AsciinemaPlayer.create()`. The
 second argument specifies the container element to mount the player under. All
