@@ -50,7 +50,7 @@ Update the `asciinema` container image tag to `custom`:
 ```diff title="docker-compose.yml"
 services:
   asciinema:
--   image: ghcr.io/asciinema/asciinema-server:20231217
+-   image: ghcr.io/asciinema/asciinema-server:20240203
 +   image: ghcr.io/asciinema/asciinema-server:custom
 ```
 

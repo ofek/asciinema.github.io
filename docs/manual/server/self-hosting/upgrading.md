@@ -19,7 +19,7 @@ Usually, it's a matter of updating the container image tag:
  services:
    asciinema:
 -    image: ghcr.io/asciinema/asciinema-server:20231120
-+    image: ghcr.io/asciinema/asciinema-server:20231217
++    image: ghcr.io/asciinema/asciinema-server:20240203
      # ...
 ```
 
