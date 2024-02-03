@@ -6,8 +6,8 @@ language](https://elixir-lang.org/) and [Phoenix
 framework](https://www.phoenixframework.org/). While not mainstream, this stack
 is easy to work with.
 
-Let's take max upload size as an example. We'll change it from the default 8MB
-to more generous 32MB.
+Let's take log level as an example. We'll change it from the default `:info` to
+more quiet `:warning`.
 
 ## Clone the repository
 
@@ -24,15 +24,11 @@ git switch -c custom
 
 ## Make the changes
 
-Edit `lib/asciinema_web/endpoint.ex` file, applying this change:
+Edit `config/prod.exs` file, applying this change:
 
-```diff hl_lines="9"
-plug Plug.Parsers,
-    parsers: [:urlencoded, :multipart, :json],
-    pass: ["*/*"],
--   json_decoder: Phoenix.json_library()
-+   json_decoder: Phoenix.json_library(),
-+   length: 32_000_000
+```diff
+- config :logger, level: :info
++ config :logger, level: :warning
 ```
 
 Then, commit the changes.
