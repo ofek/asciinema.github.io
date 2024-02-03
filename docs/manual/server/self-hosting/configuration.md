@@ -119,6 +119,12 @@ you when facing issues.
 
 [Here](https://asciinema.org/about) is one on asciinema.org.
 
+### Upload size limit
+
+The default size limit for the uploaded recordings is 8 MB. This can be raised
+by setting `UPLOAD_SIZE_LIMIT` variable to the desired limit, in bytes. For
+example, `UPLOAD_SIZE_LIMIT=16000000` changes the limit to 16 MB.
+
 ## Database
 
 asciinema server utilizes a PostgreSQL database for storing recording metadata
