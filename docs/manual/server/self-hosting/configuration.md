@@ -125,6 +125,29 @@ The default size limit for the uploaded recordings is 8 MB. This can be raised
 by setting `UPLOAD_SIZE_LIMIT` variable to the desired limit, in bytes. For
 example, `UPLOAD_SIZE_LIMIT=16000000` changes the limit to 16 MB.
 
+### Unclaimed recordings removal
+
+When a recording is uploaded with [`asciinema
+upload`](../../cli/usage.md#asciinema-upload-filename) from a new system, it's
+not linked to any user account, unless [`asciinema
+auth`](../../cli/usage.md#asciinema-auth) was used to authenticate the CLI with
+the server (either before or after the upload). By default, such "unclaimed"
+recordings, are kept forever on a self-hosted asciinema server.
+
+To enable automatic "garbage collection" for unclaimed recordings, use
+`UNCLAIMED_RECORDING_TTL` variable, set to the number of days after which each
+unclaimed recording should be deleted. For example, `UNCLAIMED_RECORDING_TTL=30`
+tells the server to keep every unclaimed recording for up to 30 days, and after
+that, delete it permanently.
+
+Setting `UNCLAIMED_RECORDING_TTL` to a tuple, e.g.
+`UNCLAIMED_RECORDING_TTL=7,30`, where the first number (`7`) is a TTL for
+soft-deletion and the second number (`30`) is a TTL for hard (permanent)
+deletion, enables a 2-step removal process. In this mode, the recording is
+marked as deleted and hidden after the soft-deletion TTL period (7 days in this
+example). Then, after the hard-deletion TTL period (30 days in this example),
+it's permanently deleted from the database and the filesystem/object store.
+
 ## Database
 
 asciinema server utilizes a PostgreSQL database for storing recording metadata
