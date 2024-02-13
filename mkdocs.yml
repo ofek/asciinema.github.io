@@ -113,12 +113,12 @@ markdown_extensions:
       alternate_style: true
 
 extra_css:
-  - stylesheets/player-3.6.3.css
+  - stylesheets/player-3.6.4.css
   - stylesheets/extra.css
   - stylesheets/fira.css
 
 extra_javascript:
-  - javascripts/player-3.6.3.min.js
+  - javascripts/player-3.6.4.min.js
   - javascripts/extra.js
 
 extra:
