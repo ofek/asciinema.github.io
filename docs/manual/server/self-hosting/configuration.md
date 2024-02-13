@@ -564,3 +564,21 @@ Elixir/Phoenix knowledge though.
 
 For non-trivial customizations you may want to consider using [asciinema
 consulting services](../../../consulting.md).
+
+### Custom TLS client certificate
+
+In case your S3 server is secured with a self-signed certificate, it is
+possible to configure the [S3 library](https://github.com/ex-aws/ex_aws)
+[http client](https://github.com/benoitc/hackney) to use a custom CA
+certificate file. This can be done with the `custom.exs` file mentioned above,
+with the following configuration:
+
+```elixir title="custom.exs"
+import Config
+
+config :ex_aws, :hackney_opts,
+  ssl_options: [
+    verify: :verify_peer,
+    cacertfile: "/usr/local/share/ca-certificates/truststore.pem"
+  ]
+```
