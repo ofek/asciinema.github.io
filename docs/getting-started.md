@@ -236,7 +236,7 @@ See [agg usage manual](manual/agg/usage.md) for GIF generation details.
 Using asciinema player to present a recording is usually a better choice than a
 GIF file if you have the option of using `<script>` tags. Contrary to GIF, the
 player provides the ability to pause, rewind, copy text, and it always renders
-the terminal content as sharp as any other text displayed in a web browser.
+the terminal content as sharp as possible on a given display.
 
 ## Next steps
 
