@@ -251,7 +251,7 @@ client](https://matrix.to/#/#asciinema:matrix.org)), or `#asciinema` IRC channel
 on [Libera.Chat](https://libera.chat/) ([web
 client](https://web.libera.chat/#asciinema)).
 
-To stay updated on latest developments and get useful tips, follow
+To stay updated on the latest developments and get useful tips, follow
 [@asciinema@fosstodon.org](https://fosstodon.org/@asciinema) on Mastodon.
 
 Happy recording!
