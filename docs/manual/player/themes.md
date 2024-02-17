@@ -15,20 +15,20 @@ AsciinemaPlayer.create('/demo.cast', document.getElementById('demo'), {
 
 name | added in version | based on
 -----|------------------|-------
-`asciinema` | 2.0 | 
-`dracula` | 3.6 | https://draculatheme.com
-`monokai` | 2.0 | https://github.com/chriskempson/base16
-`nord` | 3.3 | https://github.com/arcticicestudio/nord
-`solarized-dark` | 2.0 | https://ethanschoonover.com/solarized/
-`solarized-light` | 2.0 | https://ethanschoonover.com/solarized/
-`tango` | 2.0 | https://en.wikipedia.org/wiki/Tango_Desktop_Project
+`asciinema` | 2.0 |
+`dracula` | 3.6 | [draculatheme.com](https://draculatheme.com)
+`monokai` | 2.0 | [github.com/chriskempson/base16](https://github.com/chriskempson/base16)
+`nord` | 3.3 | [github.com/arcticicestudio/nord](https://github.com/arcticicestudio/nord)
+`solarized-dark` | 2.0 | [ethanschoonover.com/solarized/](https://ethanschoonover.com/solarized/)
+`solarized-light` | 2.0 | [ethanschoonover.com/solarized/](https://ethanschoonover.com/solarized/)
+`tango` | 2.0 | [en.wikipedia.org/wiki/Tango_Desktop_Project](https://en.wikipedia.org/wiki/Tango_Desktop_Project)
 
 ## Custom themes
 
 To use a custom theme, first define a CSS class named
-`asciinema-player-theme-<name>`, e.g.  `asciinema-player-theme-foobar`. Then, 
-set the [`theme` option](options.md#theme) to the name of the theme, e.g.
-`theme: 'foobar'`.
+`asciinema-player-theme-<name>`, e.g. `asciinema-player-theme-foobar`. Then, set
+the [`theme` option](options.md#theme) to the name of the theme, e.g.  `theme:
+'foobar'`.
 
 asciinema player themes use [custom CSS
 properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*), aka CSS
