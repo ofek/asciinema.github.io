@@ -110,9 +110,9 @@ Defaults to:
 
 !!! tip
 
-    This option makes the playback more pleasant for viewers therefore it's
-    recommended to use in most cases. It's often better to use `idleTimeLimit`
-    than `speed`. You can use both together too!
+    This option makes the playback more pleasant for viewers, therefore it's
+    recommended to use it in most cases. It's often better to use
+    `idleTimeLimit` than `speed`. You can use both together too!
 
 ### `theme`
 
