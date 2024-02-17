@@ -120,19 +120,20 @@ Type: string
 
 Terminal color theme.
 
-One of:
+See [Terminal themes](themes.md) for a list of available built-in themes, and
+how to use a custom theme.
 
-* `"asciinema"`
-* `"dracula"`
-* `"monokai"`
-* `"nord"`
-* `"solarized-dark"`
-* `"solarized-light"`
-* `"tango"`
+If this options is not specified, the player uses the original (recorded) theme
+when available; otherwise, it uses the `asciinema` theme.
 
-Defaults to `"asciinema"`.
+!!! note
 
-You can also [use a custom theme](https://github.com/asciinema/asciinema-player/wiki/Custom-terminal-themes).
+    Capture of the original terminal theme is performed by [asciinema
+    CLI](../cli/index.md) since version 3.0. For existing recordings in
+    [asciicast v2 format](https://docs.asciinema.org/manual/asciicast/v2/), you
+    can embed a theme manually by adding the [`theme`
+    entry](https://docs.asciinema.org/manual/asciicast/v2/#theme) to the header
+    line of a recording file.
 
 ### `poster`
 

@@ -72,6 +72,7 @@ nav:
       - manual/player/api.md
       - manual/player/fonts.md
       - manual/player/markers.md
+      - manual/player/themes.md
       - manual/player/shortcuts.md
       - manual/player/parsers.md
       - manual/player/upgrading.md
