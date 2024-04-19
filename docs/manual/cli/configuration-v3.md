@@ -1,0 +1,104 @@
+# Configuration
+
+## Config file
+
+You can configure asciinema by creating config file at
+`$HOME/.config/asciinema/config.toml`. A system-wide config file at
+`/etc/asciinema/config.toml` may also be used to set defaults for all users.
+
+Here's an overview of all available options for each configuration section.
+
+```toml title="~/.config/asciinema/config.toml"
+[server]
+
+; asciinema server URL
+; If you run your own instance of asciinema server then set its address here
+; It can also be overriden by setting ASCIINEMA_SERVER_URL environment variable
+url = "https://asciinema.example.com"
+
+[cmd.rec]
+
+; Command to record, default: $SHELL
+command = "/bin/bash -l"
+
+; Enable input (keyboard) recording, default: false
+input = true
+
+; List of environment variables to capture, default: SHELL,TERM
+env = "SHELL,TERM,USER"
+
+; Limit recorded terminal inactivity to max n seconds, default: off
+idle_time_limit = 2
+
+; Define hotkey for pausing recording (suspending capture of output),
+; default: ^\ (control + backslash)
+pause_key = "^p"
+
+; Define hotkey for adding a marker, default: none
+add_marker_key = "^x"
+
+; Define hotkey prefix key - when defined other recording hotkeys must
+; be preceeded by it, default: no prefix
+prefix_key = "^a"
+
+[cmd.play]
+
+; Playback speed (can be fractional), default: 1
+speed = 2
+
+; Limit replayed terminal inactivity to max n seconds, default: off
+idle_time_limit = 1
+
+; Define hotkey for pausing/resuming playback,
+; default: space
+pause_key = "p"
+
+; Define hotkey for stepping through playback, a frame at a time,
+; default: . (dot)
+step_key = "s"
+
+; Define hotkey for jumping to the next marker,
+; default: ]
+next_marker_key = "m"
+
+[notifications]
+; Desktop notifications are displayed in several situations, e.g. when
+; pausing/resuming the capture of terminal with ^\ keyboard shortcut.
+
+; Should desktop notifications be enabled, default: true
+enabled = false
+
+; Custom notification command
+; asciinema automatically detects available desktop notification system
+; (notify-send on GNU/Linux, osacript on macOS). Custom command can be
+; used if needed.
+; When invoked, environment variable $TEXT contains notification text.
+command = 'tmux display-message "$TEXT"'
+```
+
+A minimal config file could look like this:
+
+```toml
+[cmd.rec]
+idle_time_limit = 2
+```
+
+## Environment variables
+
+### `ASCIINEMA_SERVER_URL`
+
+Specifies base URL of an [asciinema server](../server/index.md), used for
+uploading of recordings and live streaming.
+
+This value can also be set in the config file as `server.url`.
+
+If you [self-host asciinema server](../server/self-hosting/index.md) then you
+should set `ASCIINEMA_SERVER_URL` to its base URL, e.g.
+`https://asciinema.example.com`.
+
+### `ASCIINEMA_CONFIG_HOME`
+
+Specifies config directory path.
+
+Defaults to `$XDG_CONFIG_HOME/asciinema` if `XDG_CONFIG_HOME` is set, otherwise
+defaults to `$HOME/.config/asciinema`.
