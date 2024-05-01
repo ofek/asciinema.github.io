@@ -74,4 +74,9 @@ of agg was, to a degree, sparked by [avt](https://github.com/asciinema/avt). In
 fact, avt has also been integrated into the asciinema server, where it's used
 for thumbnail generation and recording analysis since 2020.
 
-The latest version of the asciinema recorder, 2.4, was released in October 2023.
+The final version of the asciinema CLI 2.x line, 2.4, was released in October
+2023. This was also the last version built with Python.
+
+The upcoming 3.0 version of the CLI has been rewritten in Rust, introducing live
+terminal streaming. As of May 2024, the new version is in the release candidate
+stage.
